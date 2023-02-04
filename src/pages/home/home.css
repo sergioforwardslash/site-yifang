@@ -1,0 +1,84 @@
+.home {
+    background: #111111;
+    color: white;
+    font-family: var(--font-family);
+}
+
+.welcome {
+    flex-wrap: wrap;
+}
+
+.welcome-info h1,
+.maps-info h1 {
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: capitalize;
+    line-height: 117px;
+    font-size: 90px;
+}
+
+.wrapper-img img {
+    width: 80%;
+    border-radius: 5px;
+}
+
+.button-arrow {
+    margin-left: 14px;
+}
+
+.welcome-info button:hover {
+    background: #a73535fa;
+    border-color: #a73535fa;
+}
+
+.maps {
+    flex-wrap: wrap;
+}
+
+.wrapper-map iframe {
+    width: 80%;
+    height: 400px;
+}
+
+@media screen and (min-width: 2000px) {
+    .welcome-info h1,
+    .maps-info h1 {
+        font-size: 180px;
+        line-height: 210px;
+    }
+}
+
+@media screen and (max-width: 1150px) {
+    .welcome-info h1,
+    .maps-info h1 {
+        font-size: 90px;
+    }
+}
+
+@media screen and (max-width: 650px) {
+    .welcome-info h1,
+    .maps-info h1 {
+        font-size: 70px;
+        line-height: 87px;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    .welcome-info h1,
+    .maps-info h1 {
+        font-size: 50px;
+        line-height: 70px;
+    }
+}
+/*
+Home: bg-[#111111] text-white p-[4rem] md:section-padding 
+Welcome:  wrapper flex-wrap
+    -info: wrapper-info
+    h1: text-[50px] tracking-[-0.04em] leading-[70px] font-semibold sm:text-[70px] sm:leading-[87px] md:text-[90px] xl:text-[117px] xl:leading-[90px] 2xl:text-[180px] 2xl:leading-[210px]
+    p: text-[12px] my-[2rem] font-normal tracking-[0.04em] sm:text-[14px] lg:text-[16px] lg:leading-[28px] 2xl:text-[30px] 2xl:leading-[50px]
+    button: hover:bg-[#a73535fa] hover:border-[#a73535fa]
+        -arrow: ml-2
+    img: wrapper-img w-[80%] rounded-sm
+Maps: wrapper
+    iframe: w-[600px] h-[450px] border-0 rounded-lg
+*/

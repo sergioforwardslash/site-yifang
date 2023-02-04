@@ -1,38 +1,148 @@
-.App {
-  text-align: center;
+.section-padding {
+    padding: 4rem 6rem;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+.wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    min-height: 100vh;
+}
+
+.wrapper-info {
+    flex: 1;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+}
+
+.wrapper-img {
+    flex: 1;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    margin-left: 2rem;
+}
+
+.wrapper-map {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 100%;
+
+    margin-right: 2rem;
+}
+
+.wrapper-img-reverse {
+    justify-content: flex-start;
+    margin-right: 2rem;
+}
+
+.wrapper-img img {
+    width: 80%;
+}
+
+.custom-button {
+    display: flex;
+    align-items: center;
+
+    background: none;
+    color: #fff;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    line-height: 28px;
+    font-size: 16px;
+    padding: 0.75rem 1.5rem;
+    margin: 1rem 0 1rem 0;
+
+    border-width: 2px;
+    border-color: #fff;
+    outline: none;
+
+    cursor: pointer;
+}
+
+
+@media screen and (min-width: 2000px) {
+    .custom-button,
+    .p__cormorant {
+      font-size: 37px;
+      line-height: 67px;
+    }
+  
+    .p__opensans {
+      font-size: 30px;
+      line-height: 50px;
+    }
+  
+    .headtext__cormorant {
+      font-size: 150px;
+      line-height: 210px;
+    }
   }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+  
+  @media screen and (max-width: 1150px) {
+    .wrapper {
+      flex-direction: column;
+    }
+  
+    .wrapper-img {
+      margin: 5rem 0 0 0;
+    }
+  
+    .wrapper-img-reverse {
+      margin: 0 0 5rem 0;
+    }
+  
+    .wrapper-img img {
+      width: 100%;
+    }
   }
-  to {
-    transform: rotate(360deg);
+  
+  @media screen and (max-width: 850px) {
+    .section-padding {
+      padding: 4rem;
+    }
   }
-}
+  
+  @media screen and (max-width: 650px) {
+    .section-padding {
+      padding: 4rem 2rem;
+    }
+    
+    .p__cormorant {
+      font-size: 21px;
+    }
+  
+    .p__opensans {
+      font-size: 14px;
+    }
+  }
+  
+  @media screen and (max-width: 450px) {
+    .p__opensans {
+      font-size: 12px;
+    }
+  
+    .p__cormorant {
+      font-size: 19px;
+    }
+  
+    .headtext__cormorant {
+      font-size: 45px;
+      line-height: 70px;
+    }
+  }

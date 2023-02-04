@@ -1,0 +1,170 @@
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #0a192f;
+    color: #fff;
+    font-family: var(--font-family);
+
+    background-attachment: fixed;
+
+    padding: 1rem 2rem;
+    width: 100%;
+}
+
+.navbar-logo {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.navbar-logo img {
+    width: 180px;
+}
+
+.navbar-links {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+
+    font-size: 24px;
+    line-height: 32px;
+}
+
+.navbar-links li {
+    margin: 0 1rem;
+    cursor: pointer;
+}
+
+.navbar-links li:hover {
+    color: gray;
+}
+
+.navbar-menu {
+    display: none;
+}
+
+.navbar-menu-links {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.navbar-menu-overlay {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100vh;
+    background-color: #000000f1;
+    transition: .5s ease;
+
+    flex-direction: column;
+    z-index: 5;
+}
+
+.overlay-close {
+    font-size: 27px;
+    color: #fff;
+    cursor: pointer;
+
+    position: absolute;
+}
+
+.navbar-menu-links li {
+    margin: 2rem;
+    cursor: pointer;
+    font-size: 36px;
+    line-height: 40px;
+    text-align: center;
+}
+
+.navbar-menu-links li:hover {
+    color: gray;
+}
+
+.sidebar {
+    display: flex;
+    position: fixed;
+    flex-direction: column;
+    top: 35%;
+    left: 0px;
+}
+
+.sidebar li {
+    width: 160px;
+    height: 60px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-left: -100px;
+    transition-duration: 300ms;
+
+    background-color: #a73535fa;
+}
+
+.sidebar li:hover {
+    margin-left: -10px;
+    transition-duration: 300ms;
+    border-radius: 5px;
+}
+
+.sidebar a {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
+    color: gainsboro;
+}
+
+/* 
+navbar:
+    -logo: w-[110px] lg:w-[150px]
+    -links: hidden md:flex lg:text-xl text-lg
+    -menu: md:hidden 
+        -links: animate-slide-in-top 
+sidebar: lg:flex fixed flex-col top-[35%] left-0
+    li: hover:ml-[-10px] duration-300
+    a: flex justify-between items-center w-full text-gray-300
+*/
+
+@media screen and (min-width: 2000px) {
+    .navbar-logo img {
+        width: 210px;
+    }
+}
+
+@media screen and (max-width: 1150px) {
+
+    .navbar-links,
+    .sidebar {
+        display: none;
+    }
+
+    .navbar-menu {
+        display: flex;
+    }
+
+    .overlay-close {
+        top: 40px;
+        right: 32px;
+    }
+}
+
+@media screen and (max-width: 650px) {
+    .navbar {
+        padding: 1rem;
+    }
+
+    .navbar-logo img {
+        width: 110px;
+    }
+
+    .overlay-close {
+        top: 26px;
+        right: 16px;
+    }
+}
