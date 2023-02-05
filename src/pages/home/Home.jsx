@@ -5,17 +5,13 @@ import './home.css'
 
 const Home = () => {
   return (
-    <div className='home section-padding'>
+    <div className='home section-padding' style={{backgroundImage: `url(${images.background})`, backgroundSize: '100%'}}>
       <div className='welcome wrapper'>
-        <div className='wrapper-info welcome-info'>
+        <div className='wrapper-info welcome-info' style={{backgroundImage: `url(${images.threedrink})`, backgroundRepeat: 'no-repeat', backgroundSize: 'cover'}}>
           <h1>Welcome to Yi Fang Glendale</h1>
           <p className='p__opensans'>Enjoy a refreshing drink made with our fresh ingredients!</p>
 
           <a href='/menu'><button className='custom-button'>Explore Menu <HiArrowNarrowRight className='button-arrow' /></button></a>
-        </div>
-
-        <div className='wrapper-img'>
-          <img src={images.storeFront} alt='store' />
         </div>
       </div>
 

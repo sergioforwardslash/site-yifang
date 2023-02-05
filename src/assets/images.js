@@ -5,6 +5,7 @@ import fruiteaLime from './fruiteaLime.png'
 import storeFront from './storeFront.png'
 import threedrink from './threedrink.png'
 import yiFangPineapple from './yiFangPineapple.png'
+import background from './background.jpg'
 
 export default {
     catering,
@@ -14,4 +15,5 @@ export default {
     storeFront,
     threedrink,
     yiFangPineapple,
+    background,
 }

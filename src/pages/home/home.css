@@ -8,6 +8,18 @@
     flex-wrap: wrap;
 }
 
+.welcome-info {
+    height: 100vh;
+    width: 100%;
+    border-radius: 5px;
+}
+
+.welcome-info h1,
+.welcome-info p,
+.welcome-info a {
+    padding: 0 2rem;
+}
+
 .welcome-info h1,
 .maps-info h1 {
     font-weight: 700;
@@ -27,8 +39,9 @@
 }
 
 .welcome-info button:hover {
-    background: #a73535fa;
-    border-color: #a73535fa;
+    background-color: #a73535fa;
+    transition: ease;
+    transition-duration: 200ms;
 }
 
 .maps {

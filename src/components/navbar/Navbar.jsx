@@ -1,13 +1,30 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import YiFangLogo from '../../assets/yifanglogo-white.webp'
 import { FaBars, FaTimes, FaInstagram, FaFacebook, FaPhoneAlt } from 'react-icons/fa'
 import './navbar.css'
 
 const Navbar = () => {
   const [nav, setNav] = useState(false)
+  const [scrollPosition, setScrollPosition] = useState(0)
+
+  useEffect( () => {
+    const handleScroll = () => {
+      setScrollPosition(window.pageYOffset)
+    }
+
+    window.addEventListener('scroll', handleScroll)
+    return () => {
+      window.removeEventListener('scroll', handleScroll)
+    }
+  }, [])
+
+  const classes = ['navbar']
+  if (scrollPosition > 50) {
+    classes.push('navbar-scroll')
+  }
 
   return (
-    <nav className='navbar'>
+    <nav className={classes.join(' ')}>
       <div className='navbar-logo'>
         <img src={YiFangLogo} alt='YiFangLogo' />
       </div>

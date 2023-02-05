@@ -3,7 +3,11 @@ import './contactus.css'
 
 const ContactUs = () => {
   return (
-    <div>ContactUs</div>
+    <div className='contactus section-padding'>
+      <div className='contactus-info'>
+        hehe hi
+      </div>
+    </div>
   )
 }
 
