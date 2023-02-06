@@ -35,7 +35,7 @@ const Footer = () => {
     </div>
 
     <div className="footer-copyright">
-      <p className="p__opensans">2021 Yi Fang. All Rights reserved.</p>
+      <p className="p__opensans">2023 Yi Fang. All Rights reserved.</p>
     </div>
 
   </div>
