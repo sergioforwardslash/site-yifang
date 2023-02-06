@@ -17,9 +17,9 @@ const Home = () => {
 
       <div className='maps wrapper'>
         <div className='maps-info wrapper-info'>
-          <h1>Come in for a tasty tea</h1>
+          <h1>Find Us Near Porto's Bakery!</h1>
           <p className='p__opensans'>251 N Brand Blvd, Glendale, CA 91203</p>
-          <p className='p__cormorant' style={{ color:'#a73535fa', margin: '2rem 0' }}>Opening Hours</p>
+          <p className='p__cormorant' style={{ color:'white', margin: '2rem 0' }}>Opening Hours</p>
           <p className='p__opensans'>Mon - Fri: 12:00 pm - 10:00 pm</p>
           <p className='p__opensans'>Sat - Sun: 12:00 pm - 11:00 pm</p>
         </div>

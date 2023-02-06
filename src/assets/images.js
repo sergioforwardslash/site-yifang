@@ -6,6 +6,7 @@ import storeFront from './storeFront.png'
 import threedrink from './threedrink.png'
 import yiFangPineapple from './yiFangPineapple.png'
 import background from './background.jpg'
+import yifangWhite from './yifanglogo-white.webp'
 
 export default {
     catering,
@@ -16,4 +17,5 @@ export default {
     threedrink,
     yiFangPineapple,
     background,
+    yifangWhite,
 }
