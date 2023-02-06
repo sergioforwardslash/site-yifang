@@ -1,5 +1,5 @@
 .home {
-    background: #111111;
+    background: var(--color-black);
     color: white;
     font-family: var(--font-family);
 }
@@ -39,7 +39,7 @@
 }
 
 .welcome-info button:hover {
-    background-color: #a73535fa;
+    background-color: var(--color-red);
     transition: ease;
     transition-duration: 200ms;
 }
