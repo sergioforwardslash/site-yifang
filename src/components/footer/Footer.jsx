@@ -2,7 +2,7 @@ import React from 'react'
 import './footer.css'
 
 import { FaInstagram, FaFacebook, FaPhoneAlt } from 'react-icons/fa';
-import images from '../../assets/images'
+import { images } from '../../constants'
 
 const Footer = () => {
   return (

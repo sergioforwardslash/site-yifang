@@ -6,6 +6,7 @@
 
 .welcome {
     flex-wrap: wrap;
+    padding-top: 5rem;
 }
 
 .welcome-info {
@@ -49,7 +50,7 @@
 }
 
 .wrapper-map iframe {
-    width: 80%;
+    width: 90%;
     height: 400px;
 }
 
@@ -58,6 +59,10 @@
     .maps-info h1 {
         font-size: 180px;
         line-height: 210px;
+    }
+
+    .wrapper-map iframe {
+        height: 700px;
     }
 }
 

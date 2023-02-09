@@ -31,7 +31,7 @@ const Navbar = () => {
 
       <ul className='navbar-links'>
         <li><a href='/'>Home</a></li>
-        <li><a href='/menu'>Menu</a></li>
+        <li><a href='https://www.toasttab.com/yifang-fruit-tea-glendale-251-north-brand-boulevard-unit-a-advfe/v3/#d10144b72-2359-4d9e-ac04-725cb5f4d119d6579997c-4428-4e97-aa49-b15f214b149b'>Menu</a></li>
         <li><a href='/catering'>Catering</a></li>
         <li><a href='/jobs'>Jobs</a></li>
         <li><a href='/contactus'>Contact Us</a></li>

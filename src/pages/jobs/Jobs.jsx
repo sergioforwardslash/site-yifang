@@ -1,7 +1,7 @@
 import React from 'react'
 import './jobs.css'
 
-import images from '../../assets/images'
+import { images } from '../../constants'
 
 const Jobs = () => {
   return (

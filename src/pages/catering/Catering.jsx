@@ -1,7 +1,7 @@
 import React from 'react'
 import './catering.css'
 
-import images from '../../assets/images'
+import { images } from '../../constants'
 
 const Catering = () => {
   return (

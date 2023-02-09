@@ -1,0 +1,88 @@
+.contactus {
+    background: var(--color-black);
+    color: white;
+    font-family: var(--font-family);
+}
+
+
+.contactus-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    background: #000000c5;
+    border-radius: 5px;
+
+    max-width: 700px;
+    /* box-shadow: 0 10px 16px 0 rgba(88, 101, 242, 1), 0 6px 20px 0 rgba(235, 69, 158, 1); */
+
+    font-size: 25px;
+
+    margin: 2rem 4rem;
+}
+
+.contactus-form input,
+.contactus-form textarea {
+    width: 100%;
+    min-height: 30px;
+
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 1rem;
+    outline: none;
+    border: none;
+
+    font-family: var(--font-family);
+    font-size: 18px;
+}
+
+.contactus-form button {
+    border-radius: 5px;
+    cursor: pointer;
+    outline: none;
+    padding: 0 0;
+    border: none;
+
+    background: var(--color-red);
+    font-family: var(--font-family);
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 27px;
+    color: var(--color-text);
+
+    width: 100%;
+    min-height: 50px;
+    max-width: 200px;
+    align-items: center;
+
+    margin: 1rem;
+}
+
+@media screen and (max-width: 1050px) {
+    .contactus-form {
+        font-size: 20px;
+        margin: 2rem;
+    }
+}
+
+@media screen and (max-width: 650px) {
+    .contactus h1 {
+        font-size: 48px;
+        line-height: 60px;
+    }
+
+    .contactus p {
+        font-size: 16px;
+        line-height: 24px;
+    }
+
+    .contactus-content__start button {
+        font-size: 16px;
+        line-height: 24px;
+        
+    }
+
+    .contactus-form input {
+        font-size: 14px;
+    }
+}

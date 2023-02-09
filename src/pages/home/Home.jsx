@@ -1,13 +1,13 @@
 import React from 'react'
 import { HiArrowNarrowRight } from 'react-icons/hi'
-import images from '../../assets/images'
+import { images } from '../../constants'
 import './home.css'
 
 const Home = () => {
   return (
     <div className='home section-padding' style={{backgroundImage: `url(${images.background})`, backgroundSize: '100%'}}>
       <div className='welcome wrapper'>
-        <div className='wrapper-info welcome-info' style={{backgroundImage: `url(${images.threedrink})`, backgroundRepeat: 'no-repeat', backgroundSize: 'cover'}}>
+        <div className='wrapper-info welcome-info' style={{backgroundImage: `url(${images.threedrink})`, backgroundRepeat: 'no-repeat', backgroundSize: 'cover', backgroundPosition: 'center'}}>
           <h1>Welcome to Yi Fang Glendale</h1>
           <p className='p__opensans'>Enjoy a refreshing drink made with our fresh ingredients!</p>
 
