@@ -7,7 +7,7 @@ const Home = () => {
   return (
     <div className='home section-padding' style={{backgroundImage: `url(${images.background})`, backgroundSize: '100%'}}>
       <div className='welcome wrapper'>
-        <div className='wrapper-info welcome-info' style={{backgroundImage: `url(${images.threedrink})`, backgroundRepeat: 'no-repeat', backgroundSize: 'cover', backgroundPosition: 'center'}}>
+        <div className=' welcome-info' style={{backgroundImage: `url(${images.threedrink})`, backgroundRepeat: 'no-repeat', backgroundSize: 'cover', backgroundPosition: 'center'}}>
           <h1>Welcome to Yi Fang Glendale</h1>
           <p className='p__opensans'>Enjoy a refreshing drink made with our fresh ingredients!</p>
 

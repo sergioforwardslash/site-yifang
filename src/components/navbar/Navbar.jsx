@@ -7,7 +7,7 @@ const Navbar = () => {
   const [nav, setNav] = useState(false)
   const [scrollPosition, setScrollPosition] = useState(0)
 
-  useEffect( () => {
+  useEffect(() => {
     const handleScroll = () => {
       setScrollPosition(window.pageYOffset)
     }
@@ -26,7 +26,9 @@ const Navbar = () => {
   return (
     <nav className={classes.join(' ')}>
       <div className='navbar-logo'>
-        <img src={YiFangLogo} alt='YiFangLogo' />
+        <a href='/'>
+          <img src={YiFangLogo} alt='YiFangLogo' />
+        </a>
       </div>
 
       <ul className='navbar-links'>
@@ -44,7 +46,7 @@ const Navbar = () => {
             <FaTimes fontSize={27} className='overlay-close' onClick={() => setNav(false)} />
             <ul className='navbar-menu-links'>
               <li><a href='/' onClick={() => setNav(false)}>Home</a></li>
-              <li><a href='/menu' onClick={() => setNav(false)}>Menu</a></li>
+              <li><a href='https://www.toasttab.com/yifang-fruit-tea-glendale-251-north-brand-boulevard-unit-a-advfe/v3/#d10144b72-2359-4d9e-ac04-725cb5f4d119d6579997c-4428-4e97-aa49-b15f214b149b' onClick={() => setNav(false)}>Menu</a></li>
               <li><a href='/catering' onClick={() => setNav(false)}>Catering</a></li>
               <li><a href='/jobs' onClick={() => setNav(false)}>Jobs</a></li>
               <li><a href='/contactus' onClick={() => setNav(false)}>Contact Us</a></li>
@@ -56,7 +58,7 @@ const Navbar = () => {
       <div className='sidebar'>
         <ul>
           <li>
-            <a href='https://www.instagram.com/yifang.cal/'>
+            <a href='https://www.instagram.com/yifang_taiwanfruittea_glendale/'>
               Instagram <FaInstagram size={30} />
             </a>
           </li>

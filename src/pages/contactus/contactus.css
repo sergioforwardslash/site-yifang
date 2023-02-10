@@ -4,7 +4,27 @@
     font-family: var(--font-family);
 }
 
+.contactus-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 
+    flex-direction: column;
+
+    min-height: 100vh;
+}
+
+.contactus-info {
+    padding: 0 2rem;
+}
+
+.contactus-info h1 {
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: capitalize;
+    line-height: 117px;
+    font-size: 90px;
+}
 .contactus-form {
     display: flex;
     flex-direction: column;
@@ -14,8 +34,7 @@
     border-radius: 5px;
 
     max-width: 700px;
-    /* box-shadow: 0 10px 16px 0 rgba(88, 101, 242, 1), 0 6px 20px 0 rgba(235, 69, 158, 1); */
-
+    
     font-size: 25px;
 
     margin: 2rem 4rem;
@@ -58,7 +77,23 @@
     margin: 1rem;
 }
 
-@media screen and (max-width: 1050px) {
+@media screen and (min-width: 2000px) {
+    .contactus-info h1,
+    .maps-info h1 {
+        font-size: 180px;
+        line-height: 210px;
+    }
+
+    .wrapper-map iframe {
+        height: 700px;
+    }
+}
+
+@media screen and (max-width: 1150px) {
+    .contactus-info h1 {
+        font-size: 90px;
+    }
+
     .contactus-form {
         font-size: 20px;
         margin: 2rem;
@@ -66,14 +101,9 @@
 }
 
 @media screen and (max-width: 650px) {
-    .contactus h1 {
-        font-size: 48px;
-        line-height: 60px;
-    }
-
-    .contactus p {
-        font-size: 16px;
-        line-height: 24px;
+    .contactus-info h1 {
+        font-size: 70px;
+        line-height: 87px;
     }
 
     .contactus-content__start button {
@@ -84,5 +114,12 @@
 
     .contactus-form input {
         font-size: 14px;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    .contactus-info h1 {
+        font-size: 50px;
+        line-height: 70px;
     }
 }

@@ -1,0 +1,66 @@
+.catering {
+    color: white;
+    font-family: var(--font-family);
+}
+
+.catering-container {
+    padding-top: 5rem;
+}
+
+.catering-info {
+    height: 100vh;
+    width: 100%;
+    border-radius: 5px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.catering-info {
+    padding: 0 2rem;
+}
+
+.catering-info h1 {
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: capitalize;
+    line-height: 117px;
+    font-size: 90px;
+}
+
+.catering-info button:hover {
+    background-color: var(--color-red);
+}
+
+.catering-info button:active {
+    opacity: .8;
+}
+
+@media screen and (min-width: 2000px) {
+    .catering-info h1 {
+        font-size: 180px;
+        line-height: 210px;
+    }
+}
+
+@media screen and (max-width: 1150px) {
+    .catering-info h1 {
+        font-size: 90px;
+    }
+}
+
+@media screen and (max-width: 650px) {
+    .catering-info h1 {
+        font-size: 70px;
+        line-height: 87px;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    .catering-info h1 {
+        font-size: 50px;
+        line-height: 70px;
+    }
+}

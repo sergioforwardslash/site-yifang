@@ -35,7 +35,7 @@ const ContactUs = () => {
 
   return (
     <div className='contactus section-padding' style={{ backgroundImage: `url(${images.background})`, backgroundSize: '100%' }}>
-      <div className='wrapper'>
+      <div className='contactus-container'>
         <div className='contactus-info wrapper-info'>
           <h1>Contact Us</h1>
           <p className='p__opensans'>Send us a message. We'd love to hear from you!</p>

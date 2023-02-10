@@ -98,6 +98,7 @@
   
   @media screen and (max-width: 1150px) {
     .wrapper {
+      padding-top: 5rem;
       flex-direction: column;
     }
   
