@@ -41,8 +41,10 @@
 
 .welcome-info button:hover {
     background-color: var(--color-red);
-    transition: ease;
-    transition-duration: 200ms;
+}
+
+.welcome-info button:active {
+    opacity: .8;
 }
 
 .maps {

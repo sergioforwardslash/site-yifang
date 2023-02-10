@@ -11,13 +11,14 @@ const Home = () => {
           <h1>Welcome to Yi Fang Glendale</h1>
           <p className='p__opensans'>Enjoy a refreshing drink made with our fresh ingredients!</p>
 
-          <a href='/menu'><button className='custom-button'>Explore Menu <HiArrowNarrowRight className='button-arrow' /></button></a>
+          <a href='https://www.toasttab.com/yifang-fruit-tea-glendale-251-north-brand-boulevard-unit-a-advfe/v3/#d10144b72-2359-4d9e-ac04-725cb5f4d119d6579997c-4428-4e97-aa49-b15f214b149b'>
+            <button className='custom-button'>Explore Menu <HiArrowNarrowRight className='button-arrow' /></button></a>
         </div>
       </div>
 
       <div className='maps wrapper'>
         <div className='maps-info wrapper-info'>
-          <h1>Find Us Near Porto's Bakery!</h1>
+          <h1>Find Us At the Heart of the Americana</h1>
           <p className='p__opensans'>251 N Brand Blvd, Glendale, CA 91203</p>
           <p className='p__cormorant' style={{ color:'white', margin: '2rem 0' }}>Opening Hours</p>
           <p className='p__opensans'>Mon - Fri: 12:00 pm - 10:00 pm</p>

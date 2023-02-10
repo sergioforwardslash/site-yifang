@@ -67,12 +67,12 @@
     padding: 0.75rem 1.5rem;
     margin: 1rem 0 1rem 0;
 
-    border-width: 22px;
-    border:solid #a73535;
+    border-width: 2px;
+    border: 4px solid #a73535;
     background-color: transparent;
 
-    transition: ease-out;
-    transition-duration: 200ms;
+    transition: ease;
+    transition-duration: 300ms;
 
     cursor: pointer;
 }
