@@ -9,7 +9,7 @@
     color: white;
     font-family: var(--font-family);
 
-    padding: 0 2rem;
+    padding: 5rem 2rem;
 }
 
 .jobs-info h1 {
@@ -37,6 +37,20 @@
     flex-direction: column;
 
     width: 100%;
+}
+
+.jobs-form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 5rem;
+}
+
+.jobs-form iframe {
+    width: 90%;
+    height: 1831px;
+
+    border: none;
 }
 
 @media screen and (min-width: 2000px) {
