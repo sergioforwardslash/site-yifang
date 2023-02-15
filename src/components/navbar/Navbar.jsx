@@ -33,7 +33,7 @@ const Navbar = () => {
 
       <ul className='navbar-links'>
         <li><a href='/'>Home</a></li>
-        <li><a href='https://www.toasttab.com/yifang-fruit-tea-glendale-251-north-brand-boulevard-unit-a-advfe/v3/#d10144b72-2359-4d9e-ac04-725cb5f4d119d6579997c-4428-4e97-aa49-b15f214b149b'>Menu</a></li>
+        <li><a target='_blank' href='https://www.toasttab.com/yifang-fruit-tea-glendale-251-north-brand-boulevard-unit-a-advfe/v3/#d10144b72-2359-4d9e-ac04-725cb5f4d119d6579997c-4428-4e97-aa49-b15f214b149b'>Menu</a></li>
         <li><a href='/catering'>Catering</a></li>
         <li><a href='/jobs'>Jobs</a></li>
         <li><a href='/contactus'>Contact Us</a></li>
@@ -46,7 +46,7 @@ const Navbar = () => {
             <FaTimes fontSize={27} className='overlay-close' onClick={() => setNav(false)} />
             <ul className='navbar-menu-links'>
               <li><a href='/' onClick={() => setNav(false)}>Home</a></li>
-              <li><a href='https://www.toasttab.com/yifang-fruit-tea-glendale-251-north-brand-boulevard-unit-a-advfe/v3/#d10144b72-2359-4d9e-ac04-725cb5f4d119d6579997c-4428-4e97-aa49-b15f214b149b' onClick={() => setNav(false)}>Menu</a></li>
+              <li><a target='_blank' href='https://www.toasttab.com/yifang-fruit-tea-glendale-251-north-brand-boulevard-unit-a-advfe/v3/#d10144b72-2359-4d9e-ac04-725cb5f4d119d6579997c-4428-4e97-aa49-b15f214b149b' onClick={() => setNav(false)}>Menu</a></li>
               <li><a href='/catering' onClick={() => setNav(false)}>Catering</a></li>
               <li><a href='/jobs' onClick={() => setNav(false)}>Jobs</a></li>
               <li><a href='/contactus' onClick={() => setNav(false)}>Contact Us</a></li>
@@ -58,12 +58,12 @@ const Navbar = () => {
       <div className='sidebar'>
         <ul>
           <li>
-            <a href='https://www.instagram.com/yifang_taiwanfruittea_glendale/'>
+            <a target='_blank' href='https://www.instagram.com/yifang_taiwanfruittea_glendale/'>
               Instagram <FaInstagram size={30} />
             </a>
           </li>
           <li>
-            <a href='https://www.facebook.com/yifangUSA'>
+            <a target='_blank' href='https://www.facebook.com/yifangUSA'>
               Facebook <FaFacebook size={30} />
             </a>
           </li>

@@ -24,6 +24,10 @@ const Jobs = () => {
             <li>etc.</li>
           </ul>
         </div>
+
+        <div className='jobs-form'>
+        <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSci079XcMzEHn6IFikBbHP1KCNiYfM8_JCLlwifBSm4oNPHpQ/viewform?embedded=true">Loading…</iframe>
+        </div>
       </div>
     </div>
   )
