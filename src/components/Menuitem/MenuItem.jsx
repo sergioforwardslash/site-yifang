@@ -8,7 +8,7 @@ const MenuItem = ({ title, price, img }) => (
     </div>
     <div className="menuitem-head">
       <div className="menuitem-name">
-        <p style={{ color: "#DCCA87" }}>{title}</p>
+        <p>{title}</p>
       </div>
       <div className="menuitem-dash" />
       <div className="menuitem-price">
