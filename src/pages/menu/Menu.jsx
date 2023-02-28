@@ -1,14 +1,14 @@
 import React from 'react'
-import './jobs.css'
+import './menu.css'
 
 import { images } from '../../constants'
 
-const Jobs = () => {
+const Menu = () => {
   return (
     <div className='section-padding' style={{ backgroundImage: `url(${images.background})`, backgroundSize: '100%' }}>
       <div className='jobs'>
         <div className='jobs-info'>
-          <h1>Need a Job?</h1>
+          <h1>Need a menu?</h1>
           <p className='p__opensans'>Come work for us!</p>
          
         </div>
@@ -25,13 +25,10 @@ const Jobs = () => {
           </ul>
         </div>
 
-        <div className='jobs-form'>
-        <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSci079XcMzEHn6IFikBbHP1KCNiYfM8_JCLlwifBSm4oNPHpQ/viewform?embedded=true">Loading…</iframe>
-        </div>
-
+     
       </div>
     </div>
   )
 }
 
-export default Jobs
+export default Menu
