@@ -45,7 +45,7 @@
 }
 
 .welcome-info button:hover {
-    background-color: var(--color-red);
+    background-color: black;
 }
 
 .welcome-info button:active {
