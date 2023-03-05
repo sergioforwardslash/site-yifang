@@ -3,6 +3,7 @@ import fruitea from '../assets/fruitea.png'
 import fruiteaGrape from '../assets/fruiteaGrape.png'
 import fruiteaLime from '../assets/fruiteaLime.png'
 import storeFront from '../assets/storeFront.png'
+import teas from '../assets/teas.jpg'
 import threedrink from '../assets/threedrink.png'
 import yiFangPineapple from '../assets/yiFangPineapple.png'
 import background from '../assets/background.jpg'
@@ -15,6 +16,7 @@ export default {
     fruiteaGrape,
     fruiteaLime,
     storeFront,
+    teas,
     threedrink,
     yiFangPineapple,
     background,
