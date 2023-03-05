@@ -2,6 +2,9 @@
     background: var(--color-black);
     color: white;
     font-family: var(--font-family);
+
+    display: flex;
+    flex-direction: column;
 }
 
 .welcome {
@@ -45,7 +48,7 @@
 }
 
 .welcome-info button:hover {
-    background-color: var(--color-red);
+    background-color: black;
 }
 
 .welcome-info button:active {
