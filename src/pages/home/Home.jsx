@@ -32,8 +32,9 @@ const Home = () => {
         {/* <span class="yelp-review" data-review-id="NiRKoQ8ZS-ugig8pB_P4MA" data-hostname="www.yelp.com">Read <a href="https://www.yelp.com/user_details?userid=3qXqoRdgfx-VPEKc9TsIag" rel="nofollow noopener">Madelyn L.</a>'s <a href="https://www.yelp.com/biz/yifang-taiwan-fruit-tea-glendale?hrid=NiRKoQ8ZS-ugig8pB_P4MA" rel="nofollow noopener">review</a> of <a href="https://www.yelp.com/biz/hjZrBeZS7bstV6cEbCzpNQ" rel="nofollow noopener">Yifang Taiwan Fruit Tea</a> on <a href="https://www.yelp.com" rel="nofollow noopener">Yelp</a><script src="https://www.yelp.com/embed/widgets.js" type="text/javascript" async></script></span> */}
       </div>
 
+   
       <div>
-        <InstagramFeed/>
+        <InstagramFeed  token={process.env.REACT_APP_INS_TOKEN} limit={12}/>
       </div>
     </div>
   )
