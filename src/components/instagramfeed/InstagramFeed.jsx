@@ -1,7 +1,9 @@
 import React, { useState, useEffect, useRef } from "react";
 import "./instagramfeed.css";
+import Feed from './Feed'
 import axios from "axios";
 
+const testToken = 'IGQVJXYTRQTVM0SHRhaXVjYnRFMjVmenhVak55dmI4eXBsdkNfLTVFV3BvU2RkYmxKRGdtR1hfUVlUQ2UtenpaYmp0ZAFRwU2daNW9CNUxvMjR5RnFFTzlmckdQeWpZALW9RMkFEdktqS1JwdDlmQ18tNQZDZD'
 const InstagramFeed = ({ token, ...props }) => {
   const [feeds, setFeedsData] = useState([]);
   //use useRef to store the latest value of the prop without firing the effect
@@ -15,8 +17,11 @@ const InstagramFeed = ({ token, ...props }) => {
     async function fetchInstagramPost() {
       try {
         axios
+          // .get(
+          //   `https://graph.instagram.com/me/media?fields=id,media_type,media_url,caption&limit=${props.limit}&access_token=${props.token}`
+          // )
           .get(
-            `https://graph.instagram.com/me/media?fields=id,media_type,media_url,caption&limit=${props.limit}&access_token=${props.token}`
+            `https://graph.instagram.com/me/media?fields=id,media_type,media_url,caption&limit=${props.limit}&access_token=${testToken}`
           )
           .then((resp) => {
             setFeedsData(resp.data.data);
@@ -38,7 +43,7 @@ const InstagramFeed = ({ token, ...props }) => {
     return (
         <div className="container">
             {feeds.map((feed) => (
-                <InstagramFeed key={feed.id} feed={feed} />
+                <Feed key={feed.id} feed={feed} />
             ))}
         </div>
     );
