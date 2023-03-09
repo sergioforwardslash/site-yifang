@@ -10,7 +10,7 @@ const Catering = () => {
         <div className='catering-info' style={{ backgroundImage: `url(${images.catering})`, backgroundRepeat: 'no-repeat', backgroundSize: 'cover', backgroundPosition: 'center' }}>
           <h1>Catering</h1>
           <p className='p__opensans'>Book us for you next event!</p>
-          <a href='/'><button className='custom-button'>Contact</button></a>
+          <a href='/catering/order'><button className='custom-button'>Contact</button></a>
         </div>
       </div>
     </div>
