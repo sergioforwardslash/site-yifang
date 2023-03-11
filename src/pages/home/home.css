@@ -2,6 +2,9 @@
     background: var(--color-black);
     color: white;
     font-family: var(--font-family);
+
+    display: flex;
+    flex-direction: column;
 }
 
 .welcome {
@@ -21,6 +24,7 @@
 }
 
 .welcome-info h1,
+.welcome-info h2,
 .welcome-info p,
 .welcome-info a {
     padding: 0 2rem;
@@ -45,7 +49,7 @@
 }
 
 .welcome-info button:hover {
-    background-color: var(--color-red);
+    background-color: black;
 }
 
 .welcome-info button:active {
@@ -67,7 +71,12 @@
         font-size: 180px;
         line-height: 210px;
     }
-
+    .welcome-info h2
+    .welcome-info p
+    .maps-info h2 {
+        font-size: 180px;
+        line-height: 210px;
+    }
     .wrapper-map iframe {
         height: 700px;
     }
@@ -78,6 +87,14 @@
     .maps-info h1 {
         font-size: 90px;
     }
+    .welcome-info h2,
+    .maps-info h2 {
+        font-size: 90px;
+    }
+    .welcome-info p,
+    .maps-info p {
+        font-size: 90px;
+    }
 }
 
 @media screen and (max-width: 650px) {
@@ -86,11 +103,31 @@
         font-size: 70px;
         line-height: 87px;
     }
+    .welcome-info h2,
+    .maps-info h2 {
+        font-size: 70px;
+        line-height: 87px;
+    }
+    .welcome-info p,
+    .maps-info p {
+        font-size: 70px;
+        line-height: 87px;
+    }
 }
 
 @media screen and (max-width: 450px) {
     .welcome-info h1,
     .maps-info h1 {
+        font-size: 50px;
+        line-height: 70px;
+    }
+    .welcome-info h2,
+    .maps-info h2 {
+        font-size: 50px;
+        line-height: 70px;
+    }
+    .welcome-info p,
+    .maps-info p {
         font-size: 50px;
         line-height: 70px;
     }
