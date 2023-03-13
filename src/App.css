@@ -1,151 +1,142 @@
 .section-padding {
-    padding: 4rem 6rem;
+  padding: 4rem 6rem;
 }
 
 .flex-center {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .wrapper {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 
-    min-height: 100vh;
+  min-height: 100vh;
 }
 
 .wrapper-info {
-    flex: 1;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    flex-direction: column;
+  flex: 1;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: column;
 }
 
 .wrapper-img {
-    flex: 1;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  flex: 1;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
-    margin-left: 2rem;
+  margin-left: 2rem;
 }
 
 .wrapper-map {
-    flex: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
-    width: 100%;
+  width: 100%;
 
-    margin-right: 2rem;
+  margin-right: 2rem;
 }
 
 .wrapper-img-reverse {
-    justify-content: flex-start;
-    margin-right: 2rem;
+  justify-content: flex-start;
+  margin-right: 2rem;
 }
 
 .wrapper-img img {
-    width: 80%;
+  width: 80%;
 }
 
 .custom-button {
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
 
-    color: #fff;
-    font-weight: 600;
-    letter-spacing: 0.04em;
-    line-height: 28px;
-    font-size: 16px;
-    padding: 0.75rem 1.5rem;
-    margin: 1rem 0 1rem 0;
+  color: #fff;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  line-height: 28px;
+  font-size: 16px;
+  padding: 0.75rem 1.5rem;
+  margin: 1rem 0 1rem 0;
 
-    border-width: 2px;
-    border: 4px solid #a73535;
-    background-color: transparent;
+  border-width: 2px;
+  border: 4px solid #a73535;
+  background-color: transparent;
 
-    transition: ease;
-    transition-duration: 300ms;
+  transition: ease;
+  transition-duration: 300ms;
 
-    cursor: pointer;
+  cursor: pointer;
 }
 
-
 @media screen and (min-width: 2000px) {
-    .custom-button,
-    .p__cormorant {
-      font-size: 37px;
-      line-height: 67px;
-    }
-  
-    .p__opensans {
-      font-size: 30px;
-      line-height: 50px;
-    }
-  
-    .headtext__cormorant {
-      font-size: 150px;
-      line-height: 210px;
-    }
+  .custom-button,
+  .p__cormorant {
+    font-size: 37px;
+    line-height: 67px;
   }
-  
-  @media screen and (max-width: 1150px) {
-    .wrapper {
-      padding-top: 5rem;
-      flex-direction: column;
-    }
-  
-    .wrapper-img {
-      margin: 5rem 0 0 0;
-    }
-  
-    .wrapper-img-reverse {
-      margin: 0 0 5rem 0;
-    }
-  
-    .wrapper-img img {
-      width: 100%;
-    }
+
+  .p__opensans {
+    font-size: 30px;
+    line-height: 50px;
   }
-  
-  @media screen and (max-width: 850px) {
-    .section-padding {
-      padding: 4rem;
-    }
+
+  .headtext__cormorant {
+    font-size: 150px;
+    line-height: 210px;
   }
-  
-  @media screen and (max-width: 650px) {
-    .section-padding {
-      padding: 4rem 2rem;
-    }
-    
-    .p__cormorant {
-      font-size: 21px;
-    }
-  
-    .p__opensans {
-      font-size: 14px;
-    }
+}
+
+@media screen and (max-width: 1150px) {
+  .wrapper {
+    padding-top: 5rem;
+    flex-direction: column;
   }
-  
-  @media screen and (max-width: 450px) {
-    .p__opensans {
-      font-size: 12px;
-    }
-  
-    .p__cormorant {
-      font-size: 19px;
-    }
-  
-    .headtext__cormorant {
-      font-size: 45px;
-      line-height: 70px;
-    }
+
+  .wrapper-img {
+    margin: 5rem 0 0 0;
   }
+
+  .wrapper-img-reverse {
+    margin: 0 0 5rem 0;
+  }
+
+  .wrapper-img img {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 850px) {
+  .section-padding {
+    padding: 4rem;
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .section-padding {
+    padding: 2rem 1rem;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .p__opensans {
+    font-size: 12px;
+  }
+
+  .p__cormorant {
+    font-size: 19px;
+  }
+
+  .headtext__cormorant {
+    font-size: 45px;
+    line-height: 70px;
+  }
+}
