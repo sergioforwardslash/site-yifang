@@ -55,8 +55,12 @@ import React, { useState, useEffect, useRef } from "react";
 import "./instagramfeed.css";
 import Feed from './Feed'
 import axios from "axios";
+import Slider from "react-slick";
+import "../slick/slick/slick.css";
+import "../slick/slick/slick-theme.css";
 
 const testToken = 'IGQVJXYTRQTVM0SHRhaXVjYnRFMjVmenhVak55dmI4eXBsdkNfLTVFV3BvU2RkYmxKRGdtR1hfUVlUQ2UtenpaYmp0ZAFRwU2daNW9CNUxvMjR5RnFFTzlmckdQeWpZALW9RMkFEdktqS1JwdDlmQ18tNQZDZD'
+
 const InstagramFeed = ({ token, ...props }) => {
   const [feeds, setFeedsData] = useState([]);
   const tokenProp = useRef(token);
@@ -68,7 +72,6 @@ const InstagramFeed = ({ token, ...props }) => {
     async function fetchInstagramPost() {
       try {
         axios
-      
           .get(
             `https://graph.instagram.com/me/media?fields=id,media_type,media_url,caption&limit=${props.limit}&access_token=${testToken}`
           )
