@@ -1,6 +1,6 @@
 import React from "react";
 
-import { Home, Catering, Jobs, ContactUs } from "./pages";
+import { Home, Catering, Jobs, ContactUs, Admin } from "./pages";
 import { Footer, Navbar, Order } from "./components";
 import { Routes, Route } from "react-router-dom";
 
@@ -19,6 +19,7 @@ const App = () => {
         <Route path="/catering/order" element={<Order />} />
         <Route path="/jobs" element={<Jobs />} />
         <Route path="/contactus" element={<ContactUs />} />
+        <Route path="/admin" element={<Admin />} />
       </Routes>
 
       <div>
