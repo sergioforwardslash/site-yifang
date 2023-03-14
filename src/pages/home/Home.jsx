@@ -19,7 +19,9 @@ const Home = () => {
 
       <div className='maps wrapper'>
         <div className='maps-info wrapper-info'>
-          <h1>Find Us At the Heart of the Americana</h1>
+          <h1>Find Us on Brand and California</h1>
+            <h2>Located convieniently near the Americana</h2>
+
           <p className='p__opensans'>251 N Brand Blvd, Glendale, CA 91203</p>
           <p className='p__cormorant' style={{ color:'white', margin: '2rem 0' }}>Opening Hours</p>
           <p className='p__opensans'>Mon - Fri: 12:00 pm - 10:00 pm</p>
