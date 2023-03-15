@@ -19,9 +19,9 @@ const Footer = () => {
         <img src={images.yifangWhite} alt="footer_logo" />
         <p className="p__opensans">&quot;The best way to find yourself is to lose yourself in the service of others.&quot;</p>
         <div className="footer-links_icons">
-          <a target='_blank' href='https://www.facebook.com/yifangUSA'><FaFacebook /></a>
+          <a target='_blank' rel='noreferrer' href='https://www.facebook.com/yifangUSA'><FaFacebook /></a>
           <a href='/contactus'><FaPhoneAlt /></a>
-          <a target='_blank' href='https://www.instagram.com/yifang_taiwanfruittea_glendale/'><FaInstagram /></a>
+          <a target='_blank' rel='noreferrer' href='https://www.instagram.com/yifang_taiwanfruittea_glendale/'><FaInstagram /></a>
         </div>
       </div>
 

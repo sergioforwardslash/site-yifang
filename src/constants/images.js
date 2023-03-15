@@ -19,6 +19,7 @@ import sunmoon from "../assets/sunmoon.jpg";
 import songboling from "../assets/songboling.jpg";
 import saltycreamblacktea from "../assets/saltycreamblacktea.jpg";
 import saltycreampouchong from "../assets/saltycreampouchong.jpg";
+import teas from '../assets/teas.jpg'
 
 export default {
   catering,
@@ -30,6 +31,7 @@ export default {
   yiFangPineapple,
   background,
   yifangWhite,
+  teas,
   menutea,
   gingerlemontea,
   luyegingertea,

@@ -4,7 +4,7 @@ import "./Menuitem.css";
 const MenuItem = ({ title, price, img }) => (
   <div className="menuitem">
     <div className="menuitem-image">
-      <img src={img} />
+      <img src={img} alt='menu-item'/>
     </div>
     <div className="menuitem-head">
       <div className="menuitem-name">
