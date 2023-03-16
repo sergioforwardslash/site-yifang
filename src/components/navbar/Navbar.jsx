@@ -38,6 +38,7 @@ const Navbar = () => {
         <li><a href='/jobs'>Jobs</a></li>
         <li><a href='/contactus'>Contact Us</a></li>
       </ul>
+      <a href='/login' className='login-button'>Login</a>
 
       <div className='navbar-menu'>
         <FaBars color='#fff' fontSize={27} onClick={() => setNav(true)} />
@@ -51,6 +52,7 @@ const Navbar = () => {
               <li><a href='/jobs' onClick={() => setNav(false)}>Jobs</a></li>
               <li><a href='/contactus' onClick={() => setNav(false)}>Contact Us</a></li>
             </ul>
+            
           </div>
         )}
       </div>
