@@ -51,7 +51,10 @@ const Navbar = () => {
               <li><a href='/catering' onClick={() => setNav(false)}>Catering</a></li>
               <li><a href='/jobs' onClick={() => setNav(false)}>Jobs</a></li>
               <li><a href='/contactus' onClick={() => setNav(false)}>Contact Us</a></li>
+              <li><a href='/login'>Login</a></li>
             </ul>
+
+            
             
           </div>
         )}

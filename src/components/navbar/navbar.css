@@ -221,7 +221,8 @@
 
 @media screen and (max-width: 1150px) {
   .navbar-links,
-  .sidebar {
+  .sidebar,
+  .login-button {
     display: none;
   }
 
