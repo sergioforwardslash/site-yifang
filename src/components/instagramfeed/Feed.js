@@ -9,7 +9,7 @@ const Feed = (props) => {
             post = (
                 <video
                     width='90%'
-                    height='auto' 
+                     height='auto' 
                     src={media_url} 
                     type="video/mp4" 
                     controls playsinline>
