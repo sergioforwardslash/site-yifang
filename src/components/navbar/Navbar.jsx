@@ -24,7 +24,7 @@ const Navbar = () => {
   }
 
   return (
-    <nav className={classes.join(' ')}>
+    <nav className='navbar'>
       <div className='navbar-logo'>
         <a href='/'>
           <img src={YiFangLogo} alt='YiFangLogo' />
