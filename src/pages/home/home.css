@@ -45,15 +45,7 @@
 }
 
 .button-arrow {
-    margin-left: 14px;
-}
-
-.welcome-info button:hover {
-    background-color: var(--color-red);
-}
-
-.welcome-info button:active {
-    opacity: .8;
+    margin: 1px 0 0 8px;
 }
 
 .maps {
