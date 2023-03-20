@@ -10,7 +10,22 @@ const Catering = () => {
         <div className='catering-info' style={{ backgroundImage: `url(${images.catering})`, backgroundRepeat: 'no-repeat', backgroundSize: 'cover', backgroundPosition: 'center' }}>
           <h1>Catering</h1>
           <p className='p__opensans'>Book us for you next event!</p>
-          <a href='/catering/order'><button className='custom-button'>Contact</button></a>
+          <a href='/catering/order'><button className="custom-button">
+              <span className="custom-span">
+                Contact
+              </span>
+              <svg
+                className="custom-svg"
+                viewBox="-5 -5 110 110"
+                preserveAspectRatio="none"
+                aria-hidden="true"
+              >
+                <path
+                  className="custom-path"
+                  d="M0,0 C0,0 100,0 100,0 C100,0 100,100 100,100 C100,100 0,100 0,100 C0,100 0,0 0,0"
+                />
+              </svg>
+            </button></a>
         </div>
       </div>
     </div>

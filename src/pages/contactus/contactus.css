@@ -1,6 +1,5 @@
 .contactus {
     background: var(--color-black);
-    color: white;
     font-family: var(--font-family);
 }
 
@@ -10,6 +9,7 @@
     align-items: center;
 
     flex-direction: column;
+    padding-top: 5rem;
 
     min-height: 100vh;
 }
@@ -38,43 +38,6 @@
     font-size: 25px;
 
     margin: 2rem 4rem;
-}
-
-.contactus-form input,
-.contactus-form textarea {
-    width: 100%;
-    min-height: 30px;
-
-    border-radius: 5px;
-    padding: 10px;
-    margin-bottom: 1rem;
-    outline: none;
-    border: none;
-
-    font-family: var(--font-family);
-    font-size: 18px;
-}
-
-.contactus-form button {
-    border-radius: 5px;
-    cursor: pointer;
-    outline: none;
-    padding: 0 0;
-    border: none;
-
-    background: var(--color-red);
-    font-family: var(--font-family);
-    font-weight: bold;
-    font-size: 20px;
-    line-height: 27px;
-    color: var(--color-text);
-
-    width: 100%;
-    min-height: 50px;
-    max-width: 200px;
-    align-items: center;
-
-    margin: 1rem;
 }
 
 @media screen and (min-width: 2000px) {

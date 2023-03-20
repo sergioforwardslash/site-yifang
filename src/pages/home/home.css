@@ -33,7 +33,7 @@
 .welcome-info h1,
 .maps-info h1 {
     font-weight: 700;
-    letter-spacing: 0.04em;
+    letter-spacing: -0.04em;
     text-transform: capitalize;
     line-height: 117px;
     font-size: 90px;
@@ -45,15 +45,7 @@
 }
 
 .button-arrow {
-    margin-left: 14px;
-}
-
-.welcome-info button:hover {
-    background-color: black;
-}
-
-.welcome-info button:active {
-    opacity: .8;
+    margin: 1px 0 0 8px;
 }
 
 .maps {
@@ -63,6 +55,9 @@
 .wrapper-map iframe {
     width: 90%;
     height: 400px;
+
+    padding: 2rem 0;
+    border: none;
 }
 
 @media screen and (min-width: 2000px) {
@@ -85,62 +80,52 @@
 @media screen and (max-width: 1150px) {
     .welcome-info h1,
     .maps-info h1 {
-        font-size: 90px;
+        font-size: 70px;
+        line-height: 72px;
     }
-    .welcome-info h2,
     .maps-info h2 {
-        font-size: 90px;
+        font-size: 40px;
+        line-height: 48px;
     }
     .welcome-info p,
     .maps-info p {
-        font-size: 90px;
+        font-size: 24px;
+        line-height: 32px;
     }
 }
 
 @media screen and (max-width: 650px) {
     .welcome-info h1,
     .maps-info h1 {
-        font-size: 70px;
-        line-height: 87px;
+        font-size: 50px;
+        line-height: 54px;
     }
-    .welcome-info h2,
     .maps-info h2 {
-        font-size: 70px;
-        line-height: 87px;
+        font-size: 30px;
+        line-height: 32px;
     }
     .welcome-info p,
     .maps-info p {
-        font-size: 70px;
-        line-height: 87px;
+        font-size: 20px;
+        line-height: 24px;
     }
+
 }
 
 @media screen and (max-width: 450px) {
     .welcome-info h1,
     .maps-info h1 {
-        font-size: 50px;
-        line-height: 70px;
+        letter-spacing: -.04em;
+        font-size: 40px;
+        line-height: 45px;
     }
-    .welcome-info h2,
     .maps-info h2 {
-        font-size: 50px;
-        line-height: 70px;
+        font-size: 25px;
+        line-height: 32px;
     }
     .welcome-info p,
     .maps-info p {
-        font-size: 50px;
-        line-height: 70px;
+        font-size: 17px;
+        line-height: 30px;
     }
 }
-/*
-Home: bg-[#111111] text-white p-[4rem] md:section-padding 
-Welcome:  wrapper flex-wrap
-    -info: wrapper-info
-    h1: text-[50px] tracking-[-0.04em] leading-[70px] font-semibold sm:text-[70px] sm:leading-[87px] md:text-[90px] xl:text-[117px] xl:leading-[90px] 2xl:text-[180px] 2xl:leading-[210px]
-    p: text-[12px] my-[2rem] font-normal tracking-[0.04em] sm:text-[14px] lg:text-[16px] lg:leading-[28px] 2xl:text-[30px] 2xl:leading-[50px]
-    button: hover:bg-[#a73535fa] hover:border-[#a73535fa]
-        -arrow: ml-2
-    img: wrapper-img w-[80%] rounded-sm
-Maps: wrapper
-    iframe: w-[600px] h-[450px] border-0 rounded-lg
-*/
