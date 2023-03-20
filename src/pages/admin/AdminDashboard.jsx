@@ -8,7 +8,7 @@ import './admin.css'
 
 const Admin = () => {
     return (
-        <div className="main">
+        <div className="main" id='admin'>
         <h2 className="main-header">React Crud Operations</h2>
       </div>
     );
