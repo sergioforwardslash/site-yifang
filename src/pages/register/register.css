@@ -8,6 +8,20 @@
   );
 }
 
+.register p {
+  text-align: center;
+  margin-top: 1rem;
+  font-weight: 600;
+}
+
+#errorMessage {
+  color: red;
+}
+
+#successMessage {
+  color: green;
+}
+
 .center {
   position: absolute;
   top: 50%;

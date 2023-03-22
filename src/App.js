@@ -1,18 +1,27 @@
 import React from "react";
 
-import { Home, Catering, Jobs, ContactUs, Login, Register ,Admin, AdminDashboard,Backgrounds } from "./pages";
+import {
+  Home,
+  Catering,
+  Jobs,
+  ContactUs,
+  Login,
+  Register,
+  AdminDashboard,
+  Backgrounds,
+} from "./pages";
 
 import { Footer, Navbar, Order } from "./components";
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, useLocation } from "react-router-dom";
 
 import "./App.css";
 
 const App = () => {
+  const location = useLocation();
+
   return (
     <div>
-      <div>
-        <Navbar />
-      </div>
+      <Navbar show={location.pathname !== "/admin"} />
 
       <Routes>
         <Route path="/" element={<Home />} />
@@ -26,9 +35,7 @@ const App = () => {
         <Route path="/register" element={<Register />} />
       </Routes>
 
-      <div>
-        <Footer />
-      </div>
+      <Footer show={location.pathname !== "/admin"} />
     </div>
   );
 };
