@@ -1,17 +1,73 @@
-//start with a textbox to store names of menu items 
+import { useState } from 'react';
 
-//eventually copy/edit/erase an item
-//name,visual-price, numerical, description; -ITEM 
+function App() {
+  const [selectedFile, setSelectedFile] = useState(null);
+  const [name, setName] = useState('');
+  const [description, setDescription] = useState('');
 
-import React from 'react';
-import './admin.css'
+  const handleFileChange = (event) => {
+    setSelectedFile(event.target.files[0]);
+  }
 
-const Admin = () => {
-    return (
-        <div className="main" id='admin'>
-        <h2 className="main-header">React Crud Operations</h2>
+  const handleNameChange = (event) => {
+    setName(event.target.value);
+  }
+
+  const handleDescriptionChange = (event) => {
+    setDescription(event.target.value);
+  }
+
+  const handleFormSubmit = (event) => {
+    event.preventDefault();
+
+    const formData = new FormData();
+    formData.append('image', selectedFile);
+    formData.append('name', name);
+    formData.append('description', description);
+
+    fetch('/upload-image', {
+      method: 'POST',
+      body: formData
+    })
+      .then(response => response.json())
+      .then(data => console.log(data))
+      .catch(error => console.error(error));
+  }
+
+  return (
+    <form onSubmit={handleFormSubmit}>
+      <div>
+        <label htmlFor="name">Name:</label>
+        <input
+          type="text"
+          id="name"
+          name="name"
+          value={name}
+          onChange={handleNameChange}
+        />
       </div>
-    );
+      <div>
+        <label htmlFor="description">Description:</label>
+        <textarea
+          id="description"
+          name="description"
+          value={description}
+          onChange={handleDescriptionChange}
+        />
+      </div>
+      <div>
+        <label htmlFor="image">Image:</label>
+        <input
+          type="file"
+          id="image"
+          name="image"
+          accept="image/*"
+          onChange={handleFileChange}
+        />
+      </div>
+      <button type="submit">Upload</button>
+    </form>
+  );
 }
 
-export default Admin;
+export default App;
