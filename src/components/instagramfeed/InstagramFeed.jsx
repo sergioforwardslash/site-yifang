@@ -102,7 +102,7 @@ const InstagramFeed = ({ token, ...props }) => {
 
     <Slider {...settings}>
       {feeds.map((feed) => (
-        <div classname = "slick-slide" key={feed.id}>
+        <div className = "slick-slide" key={feed.id}>
           <Feed feed={feed} />
         </div>
       ))}
