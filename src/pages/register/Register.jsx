@@ -25,7 +25,7 @@ const Register = () => {
     event.preventDefault()
     setSubmitting(true);
     axios
-      .post("http://localhost:3001/register", formData)
+      .post("http://localhost:3001/user/register", formData)
       .then((response) => {
         setSuccess(true);
         setError(null);
