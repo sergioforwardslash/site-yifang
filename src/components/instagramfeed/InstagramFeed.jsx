@@ -1,14 +1,14 @@
-
 // export default InstagramFeed;
 import React, { useState, useEffect, useRef } from "react";
 import "./instagramfeed.css";
-import Feed from './Feed'
+import Feed from "./Feed";
 import axios from "axios";
 import Slider from "react-slick";
 import "../slick/slick/slick.css";
 import "../slick/slick/slick-theme.css";
 
-const testToken = 'IGQVJXNzl1dS1laUowZA2hkWU92ZAl9KNkJuZAFFYZAFNleWxSMDdJVFVwbXRKQWI5bGtTRWEyNjBlOHBJcldqRVp3ZAlJwclN4MW43WUdMc3RvTmVJNmNSQ3pxYkhuanZAoWVFnQlFUODh3dnBKWngwSzJvNQZDZD'
+const testToken =
+  "IGQVJXNzl1dS1laUowZA2hkWU92ZAl9KNkJuZAFFYZAFNleWxSMDdJVFVwbXRKQWI5bGtTRWEyNjBlOHBJcldqRVp3ZAlJwclN4MW43WUdMc3RvTmVJNmNSQ3pxYkhuanZAoWVFnQlFUODh3dnBKWngwSzJvNQZDZD";
 
 const InstagramFeed = ({ token, ...props }) => {
   const [feeds, setFeedsData] = useState([]);
@@ -48,16 +48,14 @@ const InstagramFeed = ({ token, ...props }) => {
   };
 
   return (
-
     <Slider {...settings}>
       {feeds.map((feed) => (
-        <div className = "slick-slide" key={feed.id}>
+        <div className="slick-slide" key={feed.id}>
           <Feed feed={feed} />
         </div>
       ))}
     </Slider>
   );
-}
+};
 
 export default InstagramFeed;
-

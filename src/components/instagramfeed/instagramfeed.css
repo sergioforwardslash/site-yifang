@@ -13,15 +13,15 @@
 
   padding: 4rem;
   border-radius: 20px;
-
 }
-  .insta-content {
-    width: 20%;
-    height: auto;
-    display: block;
-    transition: all 100ms ease-out;
-  }
-  
-  .container img:hover {
-    transform: scale(1.04);
-  }
+.insta-content {
+  width: 20%;
+  height: auto;
+  display: block;
+  transition: all 100ms ease-out;
+}
+
+.container img:hover {
+  transform: scale(1.04);
+}
+
