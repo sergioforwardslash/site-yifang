@@ -42,9 +42,9 @@ const InstagramFeed = ({ token, ...props }) => {
   const settings = {
     dots: true,
     infinite: true,
-    speed: 500,
-    slidesToShow: 3,
-    slidesToScroll: 1,
+    speed: 200,
+    slidesToShow: 4,
+    slidesToScroll: 2,
   };
 
   return (
