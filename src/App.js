@@ -19,11 +19,11 @@ import "./App.css";
 
 const App = () => {
   const location = useLocation();
+  const hideFooterandNavbar = location.pathname.startsWith('/admin');
 
   return (
     <div>
-      <Navbar show={location.pathname !== "/admin"} />
-
+      {!hideFooterandNavbar && <Navbar />}
       <Routes>
         <Route path="/" element={<Home />} />
 
@@ -40,8 +40,7 @@ const App = () => {
         <Route path="/register" element={<Register />} />
         <Route path="/forgot-password" element={<ForgotPassword />} />
       </Routes>
-
-      <Footer show={location.pathname !== "/admin"} />
+      {!hideFooterandNavbar && <Footer />}
     </div>
   );
 };
