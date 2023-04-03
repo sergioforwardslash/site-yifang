@@ -8,8 +8,8 @@ const Feed = (props) => {
         case "VIDEO":
             post = (
                 <video
-                    width='90%'
-                     height='auto' 
+                    width='250'
+                    height='250' 
                     src={media_url} 
                     type="video/mp4" 
                     controls playsInline>
@@ -19,8 +19,8 @@ const Feed = (props) => {
         case "CAROUSEL_ALBUM":
             post = (
                 <img 
-                    width='100%'
-                    height='auto'
+                    width='250'
+                    height='width*auto'
                     id={id} 
                     src={media_url} 
                     alt={caption} 
@@ -30,7 +30,7 @@ const Feed = (props) => {
         default:
             post = (
                 <img 
-                    width='100%'
+                    width='200'
                     height='auto'
                     id={id} 
                     src={media_url} 
