@@ -22,33 +22,35 @@ const ForgotPassword = () => {
   };
 
   return (
-    <div>
-      <h1>Reset Password</h1>
-      <form onSubmit={handleSubmit}>
-        <div className="input">
-          <input
-            type="email"
-            name="email"
-            required
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-          />
-          <span></span>
-          <label>Email</label>
-        </div>
-        <div className="input">
-          <input
-            type="password"
-            name="password"
-            required
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-          />
-          <span></span>
-          <label>Password</label>
-        </div>
-        <input type="submit" value="Reset Password" />
-      </form>
+    <div className="login section-padding">
+      <div className="center">
+        <h1>Reset Password</h1>
+        <form onSubmit={handleSubmit}>
+          <div className="input">
+            <input
+              type="email"
+              name="email"
+              required
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+            />
+            <span></span>
+            <label>Email</label>
+          </div>
+          <div className="input">
+            <input
+              type="password"
+              name="password"
+              required
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+            />
+            <span></span>
+            <label>New Password</label>
+          </div>
+          <input type="submit" value="Reset Password" />
+        </form>
+      </div>
     </div>
   );
 };

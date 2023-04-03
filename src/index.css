@@ -20,6 +20,8 @@
 a {
   color: unset;
   text-decoration: none;
+  margin: 0;
+  padding: 0;
 }
 
 ul,
