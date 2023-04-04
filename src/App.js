@@ -14,6 +14,7 @@ import {
 
 import { Footer, Navbar, Order } from "./components";
 import { Routes, Route, useLocation } from "react-router-dom";
+// import { selectedBackground } from "../admin/adminpages/backgrounds/Backgrounds";
 
 import "./App.css";
 
@@ -23,7 +24,7 @@ const App = () => {
 
   return (
     <div>
-      {!hideFooterandNavbar && <Navbar />}
+      {hideFooterandNavbar && <Navbar />}
       <Routes>
         <Route path="/" element={<Home />} />
 
@@ -40,7 +41,7 @@ const App = () => {
         <Route path="/register" element={<Register />} />
         <Route path="/forgot-password" element={<ForgotPassword />} />
       </Routes>
-      {!hideFooterandNavbar && <Footer />}
+      {hideFooterandNavbar && <Footer />}
     </div>
   );
 };

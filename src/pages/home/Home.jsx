@@ -2,14 +2,17 @@ import React from "react";
 import { InstagramFeed } from "../../components";
 import { HiArrowNarrowRight } from "react-icons/hi";
 import { images } from "../../constants";
+import { currentBackground } from "../admin/adminpages/backgrounds/Backgrounds";
 import "./home.css";
 
 const Home = () => {
+
+  console.log(currentBackground)
   return (
     <div
       className="home section-padding"
       style={{
-        backgroundImage: `url(${images.background})`,
+        backgroundImage: `url(${currentBackground})`,
         backgroundSize: "100%",
       }}
     >
