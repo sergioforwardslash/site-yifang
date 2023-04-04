@@ -9,6 +9,7 @@ import {
   Register,
   AdminDashboard,
   Backgrounds,
+  ManageMenuItem,
   ForgotPassword,
 } from "./pages";
 
@@ -19,11 +20,11 @@ import "./App.css";
 
 const App = () => {
   const location = useLocation();
-  const hideFooterandNavbar = location.pathname.startsWith('/admin');
-
+  const hideFooterandNavbar = location.pathname.startsWith("/admin");
+console.log(hideFooterandNavbar)
   return (
-    <div>
-      {!hideFooterandNavbar && <Navbar />}
+    <>
+      {!hideFooterandNavbar ? null : <Navbar />}
       <Routes>
         <Route path="/" element={<Home />} />
 
@@ -34,6 +35,7 @@ const App = () => {
         <Route path="/contactus" element={<ContactUs />} />
 
         <Route path="/admin" element={<AdminDashboard />} />
+        <Route path="/admin/menuitem" element={<ManageMenuItem />} />
         <Route path="/admin/backgrounds" element={<Backgrounds />} />
 
         <Route path="/login" element={<Login />} />
@@ -41,7 +43,7 @@ const App = () => {
         <Route path="/forgot-password" element={<ForgotPassword />} />
       </Routes>
       {!hideFooterandNavbar && <Footer />}
-    </div>
+    </>
   );
 };
 

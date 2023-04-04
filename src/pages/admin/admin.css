@@ -1,19 +1,21 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
 
-.admin-dashboard{
+.admin-dashboard {
   background: var(--color-black);
   color: white;
   font-family: var(--font-family);
-  
+
   display: flex;
   flex-direction: column;
 
   padding: 2rem 4rem;
+
+  min-height: 100vh;
 }
 
 .admin-dashboard h1 {
   text-align: center;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
 }
 
 .admin-container {
@@ -21,15 +23,27 @@
   flex-direction: row;
   align-items: flex-start;
   justify-content: flex-start;
+  width: 100%;
 
   padding: 2rem 0;
+  border: 1px solid white;
 }
 
 .admin-links {
-margin-right: 2rem;
+  padding: .5rem 2rem;
+  border: 1px solid white;
+  min-width: 300px;
+
 }
 
-.admin-links h4 {
+.admin-links h2 {
   text-align: center;
-  margin-bottom: .5rem;
+  margin-bottom: 0.5rem;
+}
+
+.admin-viewbox {
+  border: 1px solid white;
+  width: 100%;
+
+  padding: .5rem 2rem;
 }
