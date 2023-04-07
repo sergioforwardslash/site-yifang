@@ -24,7 +24,7 @@ const App = () => {
 console.log(hideFooterandNavbar)
   return (
     <>
-      {!hideFooterandNavbar ? null : <Navbar />}
+      {!hideFooterandNavbar && <Navbar />}
       <Routes>
         <Route path="/" element={<Home />} />
 

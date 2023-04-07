@@ -4,10 +4,7 @@ import './footer.css'
 import { FaInstagram, FaFacebook, FaPhoneAlt } from 'react-icons/fa';
 import { images } from '../../constants'
 
-const Footer = ({ show }) => {
-  if (!show) {
-    return null;
-  }
+const Footer = () => {
 
   return (
     <div className="footer section-padding" id="login">

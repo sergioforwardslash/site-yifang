@@ -3,7 +3,7 @@ import YiFangLogo from '../../assets/yifanglogo-white.webp'
 import { FaBars, FaTimes, FaInstagram, FaFacebook, FaPhoneAlt } from 'react-icons/fa'
 import './navbar.css'
 
-const Navbar = ({ show }) => {
+const Navbar = () => {
   const [nav, setNav] = useState(false)
   const [scrollPosition, setScrollPosition] = useState(0)
 
@@ -21,10 +21,6 @@ const Navbar = ({ show }) => {
   const classes = ['navbar']
   if (scrollPosition > 50) {
     classes.push('navbar-scroll')
-  }
-
-  if (!show) {
-    return null;
   }
 
   return (
