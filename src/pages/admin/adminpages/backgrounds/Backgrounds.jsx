@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './backgrounds.css';
 import { images } from '../../../../constants';
-
+import { Link } from 'react-router-dom';
 export let currentBackground ;
 
 const Backgrounds = () => {
@@ -74,6 +74,8 @@ console.log(images.background)
             <img className='imagePreview' src={background} alt={`Custom Background ${index}`} />
           </button>
         ))}
+
+
       </center>
 
       <div>

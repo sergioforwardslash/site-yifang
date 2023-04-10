@@ -9,22 +9,21 @@ import {
   Register,
   AdminDashboard,
   Backgrounds,
+  ManageMenuItem,
   ForgotPassword,
 } from "./pages";
 
 import { Footer, Navbar, Order } from "./components";
 import { Routes, Route, useLocation } from "react-router-dom";
-// import { selectedBackground } from "../admin/adminpages/backgrounds/Backgrounds";
 
 import "./App.css";
 
 const App = () => {
   const location = useLocation();
-  const hideFooterandNavbar = location.pathname.startsWith('/admin');
-
+  const hideFooterandNavbar = location.pathname.startsWith("/admin");
   return (
     <div>
-      {hideFooterandNavbar && <Navbar />}
+      {!hideFooterandNavbar && <Navbar />}
       <Routes>
         <Route path="/" element={<Home />} />
 
@@ -35,13 +34,14 @@ const App = () => {
         <Route path="/contactus" element={<ContactUs />} />
 
         <Route path="/admin" element={<AdminDashboard />} />
+        {/* <Route path="/admin/menuitem" element={<ManageMenuItem />} /> */}
         <Route path="/admin/backgrounds" element={<Backgrounds />} />
 
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
         <Route path="/forgot-password" element={<ForgotPassword />} />
       </Routes>
-      {hideFooterandNavbar && <Footer />}
+      {!hideFooterandNavbar && <Footer />}
     </div>
   );
 };
