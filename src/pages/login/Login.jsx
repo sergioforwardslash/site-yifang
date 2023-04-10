@@ -30,10 +30,10 @@ const Login = () => {
 
   return (
     <div className="login section-padding">
-      <div className="center">
+      <div className="login-center">
         <h1>Login</h1>
         <form onSubmit={onSubmit}>
-          <div className="input">
+          <div className="login-input">
             <input
               type="text"
               name="username"
@@ -44,7 +44,7 @@ const Login = () => {
             <span></span>
             <label>Username</label>
           </div>
-          <div className="input">
+          <div className="login-input">
             <input
               type="password"
               name="password"
@@ -55,11 +55,11 @@ const Login = () => {
             <span></span>
             <label>Password</label>
           </div>
-          <div className="pass">
+          <div className="login-pass">
             <a href="/forgot-password">Forgot Password?</a>
           </div>
           <input type="submit" value="Login" />
-          <div className="signup">
+          <div className="login-signup">
             Not a member? <a href="/register">Sign Up</a>
           </div>
         </form>
