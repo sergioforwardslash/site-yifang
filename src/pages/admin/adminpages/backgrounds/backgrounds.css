@@ -1,0 +1,38 @@
+.bMain {
+  background: var(--color-black);
+  color: white;
+  font-family: var(--font-family);
+  display: block;
+}
+
+.bMain button {
+  background-color: transparent;
+  border: none;
+  margin: 10px;
+  padding: 0;
+  width: 100px;
+  height: 100px;
+  background-size:cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  cursor: pointer;
+  
+}
+
+.bMain button img {
+  display: none;
+}
+
+.h1 {
+  font: bold;
+  font-size: 25px;
+  padding: 20px;
+}
+
+input[type="file"] {
+  display: none;
+}
+
+.imagePreview {
+  width: 500px;
+}

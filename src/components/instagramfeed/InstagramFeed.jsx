@@ -43,10 +43,22 @@ const InstagramFeed = ({ token, ...props }) => {
     dots: true,
     infinite: true,
     speed: 200,
-    slidesToShow: 4,
     slidesToScroll: 2,
+    // slidesToShow: 4
   };
 
+  console.log(window.innerWidth )
+
+  // Set the number of posts to show based on screen size
+  if (window.innerWidth > 500 ){
+    settings.slidesToShow = 4;
+  }
+  else if (window.innerWidth < 400 ) {
+    console.log("Legth check");
+    settings.slidesToShow = 1;
+  } 
+  
+  
   return (
     <Slider {...settings}>
       {feeds.map((feed) => (

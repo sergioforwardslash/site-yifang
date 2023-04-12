@@ -1,20 +1,23 @@
 import React from "react";
+import {  useLocation } from "react-router-dom";
 import { InstagramFeed } from "../../components";
 import { HiArrowNarrowRight } from "react-icons/hi";
 import { images } from "../../constants";
+// import { currentBackground } from "../admin/adminpages/backgrounds/Backgrounds";
 import "./home.css";
 
 const Home = () => {
+  const location = useLocation();
+  const background = location.state?.background;
+  // console.log(openprofile)
+
   return (
-    <div
+
+    <div 
       className="home section-padding"
-      style={{
-        backgroundImage: `url(${images.background})`,
-        backgroundSize: "100%",
-      }}
-    >
+      style={{ backgroundImage: `url(${background})` }}>
       <div className="welcome wrapper">
-        <div
+        <div 
           className=" welcome-info"
           style={{
             backgroundImage: `url(${images.teas})`,

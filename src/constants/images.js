@@ -20,10 +20,16 @@ import songboling from "../assets/songboling.jpg";
 import saltycreamblacktea from "../assets/saltycreamblacktea.jpg";
 import saltycreampouchong from "../assets/saltycreampouchong.jpg";
 import teas from '../assets/teas.jpg'
+import flowers from '../assets/flowers.jpg'
+import beach from '../assets/beach.jpg'
+import wild from '../assets/wild.jpg'
 
 export default {
   catering,
   fruitea,
+  wild,
+  beach,
+  flowers,
   fruiteaGrape,
   fruiteaLime,
   storeFront,

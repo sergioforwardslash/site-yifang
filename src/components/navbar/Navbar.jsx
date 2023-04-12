@@ -35,7 +35,7 @@ const Navbar = () => {
         <li><a href='/'>Home</a></li>
         <li><a target='_blank' rel='noreferrer' href='https://www.toasttab.com/yifang-fruit-tea-glendale-251-north-brand-boulevard-unit-a-advfe/v3/#d10144b72-2359-4d9e-ac04-725cb5f4d119d6579997c-4428-4e97-aa49-b15f214b149b'>Menu</a></li>
         <li><a href='/catering'>Catering</a></li>
-        <li><a href='/jobs'>Jobs</a></li>
+        <li><a href='https://docs.google.com/forms/d/e/1FAIpQLSci079XcMzEHn6IFikBbHP1KCNiYfM8_JCLlwifBSm4oNPHpQ/viewform?usp=sf_link'>Careers</a></li>
         <li><a href='/contactus'>Contact Us</a></li>
       </ul>
       <a href='/login' className='login-button'><span>Login</span></a>
