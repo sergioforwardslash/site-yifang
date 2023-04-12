@@ -11,3 +11,4 @@ export {default as ManageMenuItem } from './admin/adminpages/managemenuitem/Mana
 export { default as Login } from "./login/Login";
 export { default as Register } from "./register/Register";
 export { default as ForgotPassword } from './forgotpassword/ForgotPassword'
+export { default as ResetPassword } from './resetpassword/ResetPassword'

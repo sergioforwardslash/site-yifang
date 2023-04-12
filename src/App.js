@@ -11,6 +11,7 @@ import {
   Backgrounds,
   ManageMenuItem,
   ForgotPassword,
+  ResetPassword,
 } from "./pages";
 
 import { Footer, Navbar, Order } from "./components";
@@ -41,6 +42,7 @@ console.log(hideFooterandNavbar)
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
         <Route path="/forgot-password" element={<ForgotPassword />} />
+        <Route path="/reset-password/:token" component={ResetPassword} />
       </Routes>
       {!hideFooterandNavbar && <Footer />}
     </>

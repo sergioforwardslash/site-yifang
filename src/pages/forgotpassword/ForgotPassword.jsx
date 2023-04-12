@@ -4,7 +4,6 @@ import axios from "axios";
 
 const ForgotPassword = () => {
   const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -12,21 +11,20 @@ const ForgotPassword = () => {
     try {
       await axios.post("http://localhost:3001/user/forgot-password", {
         email,
-        password,
       });
-      alert("Password reset successfully");
+      alert("Password reset request sent successfully");
     } catch (error) {
       console.log(error);
-      alert("Failed to reset password");
+      alert("Failed to request password reset.");
     }
   };
 
   return (
-    <div className="login section-padding">
-      <div className="center">
+    <div className="forgotpassword section-padding">
+      <div className="forgotpassword-center">
         <h1>Reset Password</h1>
         <form onSubmit={handleSubmit}>
-          <div className="input">
+          <div className="forgotpassword-input">
             <input
               type="email"
               name="email"
@@ -37,7 +35,7 @@ const ForgotPassword = () => {
             <span></span>
             <label>Email</label>
           </div>
-          <div className="input">
+          {/* <div className="input">
             <input
               type="password"
               name="password"
@@ -47,7 +45,7 @@ const ForgotPassword = () => {
             />
             <span></span>
             <label>New Password</label>
-          </div>
+          </div> */}
           <input type="submit" value="Reset Password" />
         </form>
       </div>
