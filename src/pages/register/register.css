@@ -22,7 +22,7 @@
   color: green;
 }
 
-.center {
+.register-center {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -32,24 +32,24 @@
   border-radius: 10px;
 }
 
-.center h1 {
+.register-center h1 {
   text-align: center;
   padding: 20px 0 20px 0;
   border-bottom: 1px solid silver;
 }
 
-.center form {
+.register-center form {
   padding: 0 40px;
   box-sizing: border-box;
 }
 
-form .input {
+form .register-input {
   position: relative;
   border-bottom: 2px solid #adadad;
   margin: 30px 0;
 }
 
-.input input {
+.register-input input {
   width: 100%;
   padding: 0 5px;
   height: 40px;
@@ -59,7 +59,7 @@ form .input {
   outline: none;
 }
 
-.input label {
+.register-input label {
   position: absolute;
   top: 50%;
   left: 5px;
@@ -70,7 +70,7 @@ form .input {
   transition: 0.5s;
 }
 
-.input span::before {
+.register-input span::before {
   content: "";
   position: absolute;
   top: 40px;
@@ -81,14 +81,14 @@ form .input {
   transition: 0.5s;
 }
 
-.input input:focus ~ label,
-.input input:valid ~ label {
+.register-input input:focus ~ label,
+.register-input input:valid ~ label {
   top: -5px;
   color: var(--color-red);
 }
 
-.input input:focus ~ span::before,
-.input input:valid ~ span::before {
+.register-input input:focus ~ span::before,
+.register-input input:valid ~ span::before {
   width: 100%;
 }
 
@@ -124,4 +124,20 @@ input[type="submit"]:hover {
 
 .loginpg a:hover {
   text-decoration: underline;
+}
+
+@media screen and (max-width: 450px) {
+  .register-center {
+    top: 50%;
+    width: 350px;
+  }
+
+  .register-center h1 {
+    font-size: 28px;
+    padding: 15px 0 15px 0;
+  }
+
+  .register-center form {
+    padding: 0 20px;
+  }
 }

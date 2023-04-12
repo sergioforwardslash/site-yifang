@@ -11,6 +11,7 @@ import {
   Backgrounds,
   ManageMenuItem,
   ForgotPassword,
+  ResetPassword,
 } from "./pages";
 
 import { Footer, Navbar, Order } from "./components";
@@ -21,8 +22,9 @@ import "./App.css";
 const App = () => {
   const location = useLocation();
   const hideFooterandNavbar = location.pathname.startsWith("/admin");
+console.log(hideFooterandNavbar)
   return (
-    <div>
+    <>
       {!hideFooterandNavbar && <Navbar />}
       <Routes>
         <Route path="/" element={<Home />} />
@@ -34,15 +36,16 @@ const App = () => {
         <Route path="/contactus" element={<ContactUs />} />
 
         <Route path="/admin" element={<AdminDashboard />} />
-        {/* <Route path="/admin/menuitem" element={<ManageMenuItem />} /> */}
+        <Route path="/admin/menuitem" element={<ManageMenuItem />} />
         <Route path="/admin/backgrounds" element={<Backgrounds />} />
 
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
         <Route path="/forgot-password" element={<ForgotPassword />} />
+        <Route path="/reset-password/:token" component={ResetPassword} />
       </Routes>
       {!hideFooterandNavbar && <Footer />}
-    </div>
+    </>
   );
 };
 

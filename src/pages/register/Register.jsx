@@ -41,13 +41,13 @@ const Register = () => {
   };
   return (
     <div className="register section-padding">
-      <div className="center">
+      <div className="register-center">
         <h1>Register</h1>
         {submitting && <p>Submitting...</p>}
         {success && <p id="successMessage">Registration successful!</p>}
         {error && <p id="errorMessage">Error: {error.message}</p>}
         <form action="/register" method="POST" onSubmit={(event) => onSubmit(event)}>
-          <div className="input">
+          <div className="register-input">
             <input
               type="email"
               name="email"
@@ -61,12 +61,12 @@ const Register = () => {
             <span></span>
             <label>Email</label>
           </div>
-          <div className="input">
+          <div className="register-input">
             <input type="text" name="username" required value={formData.username} onChange={handleChange} />
             <span></span>
             <label>Username</label>
           </div>
-          <div className="input">
+          <div className="register-input">
             <input type="password" name="password" required value={formData.password} onChange={handleChange} />
             <span></span>
             <label>Password</label>
