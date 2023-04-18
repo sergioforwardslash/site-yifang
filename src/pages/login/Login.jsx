@@ -3,41 +3,56 @@ import "./login.css";
 import axios from "axios";
 
 const Login = () => {
-  const [userInfo, setUserInfo] = useState({
+  const [submitting, setSubmitting] = useState(false);
+  const [success, setSuccess] = useState(false);
+  const [error, setError] = useState(null);
+
+  const [FormData, setFormData] = useState({
     username: "",
     password: "",
   });
 
-  const onSubmit = (event) => {
-    event.preventDefault();
-    axios
-      .post("http://localhost:3001/user/login", userInfo)
-      .then((response) => {
-        console.log("Loggedin");
-      })
-      .catch((error) => {
-        console.log(error);
-      });
-  };
-
   const handleChange = (event) => {
     const { name, value } = event.target;
-    setUserInfo((prevState) => ({
+    setFormData((prevState) => ({
       ...prevState,
       [name]: value,
     }));
+  };
+
+  const onSubmit = (event) => {
+    event.preventDefault();
+    setSubmitting(true);
+    axios
+      .post("http://localhost:3001/user/login", FormData)
+      .then((response) => {
+        setSuccess(true)
+        setError(null)
+        console.log("Loggedin");
+      })
+      .catch((error) => {
+        setSuccess(false)
+        setError(true)
+        console.log(error);
+      })
+      .finally(() => {
+        setSubmitting(false);
+      });
   };
 
   return (
     <div className="login section-padding">
       <div className="login-center">
         <h1>Login</h1>
+        {submitting && <p>Submitting...</p>}
+        {success && <p id="successMessage">Login successful!</p>}
+        {error && <p id="errorMessage">Incorrect username or password.</p>}
         <form onSubmit={onSubmit}>
           <div className="login-input">
             <input
               type="text"
               name="username"
-              value={userInfo.username}
+              value={FormData.username}
               onChange={handleChange}
               required
             />
@@ -48,7 +63,7 @@ const Login = () => {
             <input
               type="password"
               name="password"
-              value={userInfo.password}
+              value={FormData.password}
               onChange={handleChange}
               required
             />
