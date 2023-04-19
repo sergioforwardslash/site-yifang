@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import './backgrounds.css';
 import { images } from '../../../../constants';
-import { Link } from 'react-router-dom';
+import axios from "axios";
+
 export let currentBackground ;
 
 const Backgrounds = () => {
@@ -11,6 +12,17 @@ const Backgrounds = () => {
   const handleBackgroundChange = (background) => {
     setSelectedBackground(background);
     currentBackground = background;
+     
+    console.log(currentBackground)
+    axios
+      .post("http://localhost:3001/admin/backgrounds",currentBackground)
+      .then((response)=> {
+          console.log("Photo toggled");
+      })
+      .catch((error) => {
+          console.log(error);
+      });
+
   };
 
   const handleUpload = (event) => {
@@ -21,6 +33,15 @@ const Backgrounds = () => {
         ...prevCustomBackgrounds,
         reader.result,
       ]);
+
+      axios
+        .post("http://localhost:3001/admin/backgrounds",selectedBackground)
+        .then((response)=> {
+          console.log("Photo Uploaded");
+        })
+        .catch((error) => {
+          console.log(error);
+        });
     };
   };
 
@@ -29,8 +50,8 @@ const Backgrounds = () => {
     document.body.style.backgroundSize = '100%';
   }, [selectedBackground]);
 
-console.log(currentBackground)
-console.log(images.background)
+// console.log(currentBackground)
+// console.log(images.background)
 
   return (
     <div className="bMain">
