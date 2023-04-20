@@ -9,7 +9,7 @@ const ForgotPassword = () => {
     event.preventDefault();
 
     try {
-      await axios.post("http://localhost:3001/user/forgot-password", {
+      await axios.post("http://192.155.82.210/user/forgot-password", {
         email,
       });
       alert("Password reset request sent successfully");
