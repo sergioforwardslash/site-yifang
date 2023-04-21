@@ -24,7 +24,7 @@ const ResetPassword = () => {
       // Send request to server for password reset with token and new password
       if (password === confirmPassword) {
         const response = await fetch(
-          `http://192.155.82.210/user/resetpassword/${token}`,
+          `https://yifangglendale.com/api/user/resetpassword/${token}`,
           {
             method: "POST",
             headers: {
