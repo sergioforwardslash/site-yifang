@@ -5,24 +5,24 @@ import axios from "axios";
 
 export let currentBackground ;
 
-const Backgrounds = () => {
+const Backgrounds = (event) => {
   let [selectedBackground, setSelectedBackground] = useState(images.background);
   const [customBackgrounds, setCustomBackgrounds] = useState([]);
 
-  const handleBackgroundChange = (background) => {
+  const handleBackgroundChange = (background, event) => {
+    
     setSelectedBackground(background);
     currentBackground = background;
      
-    console.log(currentBackground)
+    console.log(currentBackground);
     axios
-      .post("http://localhost:3001/admin/backgrounds",currentBackground)
-      .then((response)=> {
-          console.log("Photo toggled");
+      .post("http://localhost:3001/admin/backgrounds", currentBackground)
+      .then((event) => {
+        console.log("Photo toggled");
       })
-      .catch((error) => {
-          console.log(error);
+      .catch((error) => { // fix typo here
+        console.log(error);
       });
-
   };
 
   const handleUpload = (event) => {

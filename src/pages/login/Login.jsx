@@ -61,7 +61,7 @@ const Login = () => {
           <input type="submit" value="Login" />
           <div className="login-signup">
             Not a member? <a href="/register">Sign Up</a>
-          </div>
+          </div>s
         </form>
       </div>
     </div>
