@@ -15,12 +15,13 @@ const Backgrounds = (event) => {
     currentBackground = background;
      
     console.log(currentBackground);
+
     axios
       .post("http://localhost:3001/admin/backgrounds", currentBackground)
       .then((event) => {
         console.log("Photo toggled");
       })
-      .catch((error) => { // fix typo here
+      .catch((error) => { 
         console.log(error);
       });
   };

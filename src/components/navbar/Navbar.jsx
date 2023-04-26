@@ -49,7 +49,7 @@ const Navbar = () => {
               <li><a href='/' onClick={() => setNav(false)}>Home</a></li>
               <li><a target='_blank' rel='noreferrer' href='https://www.toasttab.com/yifang-fruit-tea-glendale-251-north-brand-boulevard-unit-a-advfe/v3/#d10144b72-2359-4d9e-ac04-725cb5f4d119d6579997c-4428-4e97-aa49-b15f214b149b' onClick={() => setNav(false)}>Menu</a></li>
               <li><a href='/catering' onClick={() => setNav(false)}>Catering</a></li>
-              <li><a href='/jobs' onClick={() => setNav(false)}>Jobs</a></li>
+              <li><a href='https://docs.google.com/forms/d/e/1FAIpQLSci079XcMzEHn6IFikBbHP1KCNiYfM8_JCLlwifBSm4oNPHpQ/viewform?usp=sf_link' onClick={() => setNav(false)}>Careers</a></li>
               <li><a href='/contactus' onClick={() => setNav(false)}>Contact Us</a></li>
               <li><a href='/login'>Login</a></li>
             </ul>
