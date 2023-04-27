@@ -8,7 +8,7 @@ import "./home.css";
 
 const Home = () => {
   const location = useLocation();
-  const background = location.state?.background;
+  const background = images.background;
   // console.log(openprofile)
 
   return (
