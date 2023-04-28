@@ -17,7 +17,7 @@ const Backgrounds = (event) => {
     console.log(currentBackground);
 
     axios
-      .post("http://localhost:3001/admin/backgrounds", currentBackground)
+      .post("http://localhost:8000/admin/backgrounds", currentBackground)
       .then((event) => {
         console.log("Photo toggled");
       })
@@ -27,24 +27,20 @@ const Backgrounds = (event) => {
   };
 
   const handleUpload = (event) => {
-    const reader = new FileReader();
-    reader.readAsDataURL(event.target.files[0]);
-    reader.onload = () => {
-      setCustomBackgrounds((prevCustomBackgrounds) => [
-        ...prevCustomBackgrounds,
-        reader.result,
-      ]);
-
-      axios
-        .post("http://localhost:3001/admin/backgrounds",selectedBackground)
-        .then((response)=> {
-          console.log("Photo Uploaded");
-        })
-        .catch((error) => {
-          console.log(error);
-        });
-    };
+    const file = event.target.files[0];
+    const formData = new FormData();
+    formData.append("backgroundImage", file);
+  
+    axios
+      .post("http://localhost:8000/admin/backgrounds", formData)
+      .then((response)=> {
+        console.log("Photo Uploaded");
+      })
+      .catch((error) => {
+        console.log(error);
+      });
   };
+  
 
   useEffect(() => {
     document.body.style.backgroundImage = `url(${selectedBackground})`;
