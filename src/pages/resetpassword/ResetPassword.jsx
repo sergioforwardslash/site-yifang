@@ -69,7 +69,7 @@ const ResetPassword = () => {
               onChange={handlePasswordChange}
               required
             />
-            <label />
+            <label>Password</label>
           </div>
 
           <div className="resetpass-input">
@@ -80,7 +80,7 @@ const ResetPassword = () => {
               onChange={handleConfirmPasswordChange}
               required
             />
-            <label />
+            <label>Confirm Password</label>
           </div>
           {/* Render password reset form fields */}
           {/* Include token as a hidden input */}
