@@ -35,17 +35,6 @@ const ForgotPassword = () => {
             <span></span>
             <label>Email</label>
           </div>
-          {/* <div className="input">
-            <input
-              type="password"
-              name="password"
-              required
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-            />
-            <span></span>
-            <label>New Password</label>
-          </div> */}
           <input type="submit" value="Reset Password" />
         </form>
       </div>
