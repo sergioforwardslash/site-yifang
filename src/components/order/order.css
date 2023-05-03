@@ -55,3 +55,45 @@
   margin: 2rem 0;
   width: 100%;
 }
+
+@media (max-width: 1024px) {
+  .order-menu-heading {
+    font-size: 36px;
+    line-height: 47px;
+  }
+}
+
+@media (max-width: 768px) {
+  .order-title {
+    margin: 1rem 0;
+  }
+  
+  .order-menu {
+    flex-direction: column;
+  }
+
+  .order-menu-items {
+    margin: 1rem 0;
+  }
+
+  .order-menu-heading {
+    font-size: 28px;
+    line-height: 36px;
+  }
+}
+
+@media (max-width: 480px) {
+  .order-title {
+    margin: 0.5rem 0;
+    font-size: 16px;
+  }
+
+  .order-menu-heading {
+    font-size: 22px;
+    font-weight: 600;
+    line-height: 24px;
+    text-align: center;
+    padding: 0;
+  }
+
+}

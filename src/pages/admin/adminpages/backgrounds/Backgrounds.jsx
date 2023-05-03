@@ -17,7 +17,7 @@ const Backgrounds = (event) => {
     console.log(currentBackground);
 
     axios
-      .post("http://localhost:8000/admin/backgrounds", currentBackground)
+      .post("https://yifangglendale.com/api/admin/backgrounds", currentBackground)
       .then((event) => {
         console.log("Photo toggled");
       })
@@ -32,7 +32,7 @@ const Backgrounds = (event) => {
     formData.append("backgroundImage", file);
   
     axios
-      .post("http://localhost:8000/admin/backgrounds", formData)
+      .post("https://yifangglendale.com/api/admin/backgrounds", formData)
       .then((response)=> {
         console.log("Photo Uploaded");
       })

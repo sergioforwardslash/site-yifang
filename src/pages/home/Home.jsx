@@ -15,7 +15,7 @@ const Home = () => {
 
     <div 
       className="home section-padding"
-      style={{ backgroundImage: `url(${background})` }}>
+      style={{ backgroundImage: `url(${images.background})`, backgroundSize: '100%' }}>
       <div className="welcome wrapper">
         <div 
           className=" welcome-info"
