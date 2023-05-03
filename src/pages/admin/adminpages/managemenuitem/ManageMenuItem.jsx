@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-
+import axios from 'axios';
 import { AdminDashboardLinks } from '../../../../components';
 import './managemenuitem.css'
 //USE MULTER
@@ -40,20 +40,16 @@ const ManageMenuItem = () => {
     data.append('name', formData.name);
     data.append('description', formData.description);
     data.append('price', formData.price);
-    // data.append('photo', formData.photo);
+    data.append('photo', selectedFile);
     console.log(formData.name)
     console.log(formData.description)
     console.log(formData.price)
     console.log(formData.photo)
-    fetch("http://localhost:8000/admin/menuitems", {
-      method: "POST",
-      body: data,
-    })
-
-      .then((response) => response.json())
-      .then((data) => console.log(data))
+    axios.post('http://localhost:8000/admin/menuitems', data)
+      .then((response) => console.log(response))
       .catch((error) => console.error(error));
   };
+  
 
   const handleEditClick = () => {
     setEditMode(true);
