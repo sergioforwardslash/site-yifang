@@ -45,7 +45,7 @@ const ManageMenuItem = () => {
     console.log(formData.description)
     console.log(formData.price)
     console.log(formData.photo)
-    axios.post('http://localhost:8000/admin/menuitems', data)
+    axios.post('http://localhost:8000/admin/menuitem', data)
       .then((response) => console.log(response))
       .catch((error) => console.error(error));
   };
@@ -94,7 +94,7 @@ const ManageMenuItem = () => {
               </div>
               <div className="menuitem-description">
                 <label htmlFor="description">Description:</label>
-                <textarea
+                <input
                   id="description"
                   name="description"
                   value={formData.description}
@@ -102,7 +102,7 @@ const ManageMenuItem = () => {
                 />
               </div>
               <div className="menuitem-price">
-                <label htmlFor="price">Price:</label>
+                <label htmlFor="price">Price: $</label>
                 <input
                   type="text"
                   id="price"
