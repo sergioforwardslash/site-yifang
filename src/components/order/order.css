@@ -23,7 +23,7 @@
 
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
   flex-direction: row;
 }
 
@@ -45,6 +45,7 @@
   line-height: 58.5px;
   letter-spacing: 0.04em;
   color: var(--color-white);
+  text-align: center;
 }
 
 .order-menu-items {
@@ -57,6 +58,9 @@
 }
 
 @media (max-width: 1024px) {
+  .order-menu {
+    flex-direction: column;
+  }
   .order-menu-heading {
     font-size: 36px;
     line-height: 47px;

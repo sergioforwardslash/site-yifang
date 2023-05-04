@@ -1,5 +1,5 @@
 .menuitem {
-    height: 100px;
+    height: 8rem;
     margin: 1rem .5rem;
     border-radius: 10px;
     width: 100%;
@@ -22,7 +22,7 @@
 .menuitem-name {
     color: var(--color-white);
     font-family: var(--font-family);
-    font-size: 17px;
+    font-size: 24px;
     font-weight: 600;
     text-align: center;
     padding-right: 1rem;
@@ -46,28 +46,27 @@
 }
 
 .menuitem-image {
-    width: 150px;
+    width: 250px;
     margin: 1rem;
 }
 
 .menuitem-image img {
     width: 100%;
-    height: 70px;
+    height: 100%;
     object-fit: cover;
+}
+
+@media (max-width: 1024px) {
+    .menuitem-name {
+        
+    }
+
 }
 
 @media (max-width: 768px) {
     .menuitem {
         margin: .5rem;
     }
-
-    /* .menuitem-name {
-        font-size: 12px;
-    }
-
-    .menuitem-price {
-        font-size: 14px;
-    } */
 }
 
 @media (max-width: 480px) {
