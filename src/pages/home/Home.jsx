@@ -1,5 +1,4 @@
 import React from "react";
-import {  useLocation } from "react-router-dom";
 import { InstagramFeed } from "../../components";
 import { HiArrowNarrowRight } from "react-icons/hi";
 import { images } from "../../constants";
@@ -7,10 +6,6 @@ import { images } from "../../constants";
 import "./home.css";
 
 const Home = () => {
-  const location = useLocation();
-  const background = images.background;
-  // console.log(openprofile)
-
   return (
 
     <div 

@@ -5,28 +5,19 @@
   display: block;
 }
 
-.bMain button {
-  background-color: transparent;
+.backgroundButton {
   border: none;
   margin: 10px;
   padding: 0;
-  width: 100px;
-  height: 100px;
-  background-size:cover;
+  width: 500px;
+  height: 250px;
+  background-size: cover;
   background-position: center;
-  background-repeat: no-repeat;
   cursor: pointer;
-  
 }
 
-.bMain button img {
+.backgroundButton img {
   display: none;
-}
-
-.h1 {
-  font: bold;
-  font-size: 25px;
-  padding: 20px;
 }
 
 input[type="file"] {
@@ -35,4 +26,16 @@ input[type="file"] {
 
 .imagePreview {
   width: 500px;
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 768px) {
+  .backgroundButton {
+    width: 250px;
+    height: 125px;
+  }
+
+  .imagePreview {
+    width: 250px;
+  }
 }
