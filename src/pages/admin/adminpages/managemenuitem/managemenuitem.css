@@ -1,0 +1,93 @@
+/* .admin-dashboard {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: Arial, sans-serif;
+    color: #333;
+  }
+  
+  .admin-dashboard h1 {
+    font-size: 2.5rem;
+    text-align: center;
+    margin: 1rem 0;
+  } */
+/*   
+  .admin-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 800px;
+    margin: 1rem;
+    padding: 1rem;
+    background-color: #f4f4f4;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  }
+  
+  .admin-container h2 {
+    font-size: 1.8rem;
+    margin-top: 2rem;
+  } */
+  
+  .menuitem-name,
+  .menuitem-description,
+  .menuitem-price {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 1rem;
+  }
+  
+  .menuitem-name label,
+  .menuitem-description label,
+  .menuitem-price label,
+  label[for="image"] {
+    font-weight: bold;
+    text-align: start;
+  }
+  
+  .menuitem-name input,
+  .menuitem-description input,
+  .menuitem-price input {
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+    color: #333;
+  }
+  
+  .admin-viewbox button {
+    padding: 0.5rem 1rem;
+    margin: 1rem;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    color: #fff;
+    background-color: #333;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .admin-viewbox button:hover {
+    background-color: #555;
+  }
+  
+  .admin-viewbox button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+  
+  .admin-viewbox span {
+    margin-left: 0.5rem;
+  }
+  
+  .admin-viewbox img {
+    max-width: 200px;
+    max-height: 200px;
+    object-fit: contain;
+    margin-top: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  

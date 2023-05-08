@@ -1,20 +1,30 @@
-import React from 'react'
-import { useState } from "react";
+import React, { useState } from 'react';
+import axios from 'axios';
 import { AdminDashboardLinks } from '../../../../components';
 import './managemenuitem.css'
-
+//USE MULTER
 
 const ManageMenuItem = () => {
-    const [selectedFile, setSelectedFile] = useState(null);
   const [editMode, setEditMode] = useState(false);
+  const [selectedFile, setSelectedFile] = useState(null);
   const [formData, setFormData] = useState({
-    name: "",
-    description: "",
-    price: "",
+    name: '',
+    description: '',
+    price: '',
+    // photo: null,
+
   });
 
   const handleFileChange = (event) => {
     setSelectedFile(event.target.files[0]);
+  
+    const data = new FormData();
+    data.append('photo', event.target.files[0]);
+  
+    setFormData({
+      ...formData,
+      photo: data,
+    });
   };
 
   const handleChange = (event) => {
@@ -26,25 +36,36 @@ const ManageMenuItem = () => {
 
   const handleFormSubmit = (event) => {
     event.preventDefault();
-
-    console.log(formData);
-
-    fetch("/upload-image", {
-      method: "POST",
-      body: formData,
-    })
-      .then((response) => response.json())
-      .then((data) => console.log(data))
+    const data = new FormData();
+    data.append('name', formData.name);
+    data.append('description', formData.description);
+    data.append('price', formData.price);
+    data.append('photo', selectedFile);
+    console.log(formData.name)
+    console.log(formData.description)
+    console.log(formData.price)
+    console.log(formData.photo)
+    axios.post('http://localhost:8000/admin/menuitem', data)
+      .then((response) => console.log(response))
       .catch((error) => console.error(error));
   };
+  
 
   const handleEditClick = () => {
     setEditMode(true);
   };
 
+
   const handleSaveClick = () => {
+    handleFormSubmit();
     setEditMode(false);
-    // Perform save action here
+    setFormData({
+      name: '',
+      description: '',
+      price: '',
+      photo: null,
+    });
+    setSelectedFile(null);
   };
 
   const handleDeleteClick = () => {
@@ -73,7 +94,7 @@ const ManageMenuItem = () => {
               </div>
               <div className="menuitem-description">
                 <label htmlFor="description">Description:</label>
-                <textarea
+                <input
                   id="description"
                   name="description"
                   value={formData.description}
@@ -81,8 +102,9 @@ const ManageMenuItem = () => {
                 />
               </div>
               <div className="menuitem-price">
-                <label htmlFor="description">Price:</label>
-                <textarea
+                <label htmlFor="price">Price: $</label>
+                <input
+                  type="text"
                   id="price"
                   name="price"
                   value={formData.price}
@@ -94,7 +116,7 @@ const ManageMenuItem = () => {
                 <input
                   type="file"
                   id="image"
-                  name="image"
+                  name="photo"
                   accept="image/*"
                   onChange={handleFileChange}
                 />
@@ -112,6 +134,10 @@ const ManageMenuItem = () => {
                 <span>{formData.description}</span>
               </div>
               <div>
+                <label>Price:</label>
+                <span>{formData.price}</span>
+              </div>
+              <div>
                 <label>Image:</label>
                 <img
                   src={selectedFile ? URL.createObjectURL(selectedFile) : null}
@@ -120,12 +146,13 @@ const ManageMenuItem = () => {
               </div>
               <button onClick={handleEditClick}>Edit</button>
               <button onClick={handleDeleteClick}>Delete</button>
+               
             </div>
           )}
         </div>
       </div>
     </div>
-  )
+  );
 }
 
 export default ManageMenuItem
