@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import { AdminDashboardLinks } from '../../../../components';
 import './managemenuitem.css'
-//USE MULTER
+
 
 const ManageMenuItem = () => {
   const [editMode, setEditMode] = useState(false);
@@ -11,8 +11,6 @@ const ManageMenuItem = () => {
     name: '',
     description: '',
     price: '',
-    // photo: null,
-
   });
 
   const handleFileChange = (event) => {
