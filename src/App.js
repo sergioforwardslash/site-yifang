@@ -22,7 +22,6 @@ import "./App.css";
 const App = () => {
   const location = useLocation();
   const hideFooterandNavbar = location.pathname.startsWith("/admin");
-console.log(hideFooterandNavbar)
   return (
     <>
       {!hideFooterandNavbar && <Navbar />}

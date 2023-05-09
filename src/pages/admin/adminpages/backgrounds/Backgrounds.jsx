@@ -14,7 +14,7 @@ const Backgrounds = () => {
     axios
       .post(
         "http://localhost:8000/admin/backgrounds",
-        selectedBackground
+        { path: selectedBackground }
       )
       .then(() => {
         console.log("Photo toggled");
@@ -53,8 +53,7 @@ const Backgrounds = () => {
         const response = await axios.get(
           "http://localhost:8000/admin/backgrounds"
         );
-        const backgrounds = response.data;
-        setCustomBackgrounds(backgrounds.map((bg) => bg.path));
+        setCustomBackgrounds(response.data);
       } catch (error) {
         console.log("Error fetching backgrounds:", error);
       }
@@ -67,12 +66,19 @@ const Backgrounds = () => {
     <button
       key={`background-${index}`}
       className="backgroundButton"
+      style={{ backgroundImage: `url(http://localhost:8000/${background})` }}
+      onClick={() => handleBackgroundChange(background)}
+    />    
+  );
+
+  const renderPredefinedBackgroundButton = (background, index) => (
+    <button
+      key={`background-${index}`}
+      className="backgroundButton"
       style={{ backgroundImage: `url(${background})` }}
       onClick={() => handleBackgroundChange(background)}
-    >
-      <img className="imagePreview" src={background} alt={altText} />
-    </button>
-  );
+    />
+  )
 
   const predefinedBackgrounds = [
     images.background,
@@ -93,7 +99,7 @@ const Backgrounds = () => {
             <h1>Background/Theme Changes</h1>
             <center>
               {predefinedBackgrounds.map((background, index) =>
-                renderBackgroundButton(
+                renderPredefinedBackgroundButton(
                   background,
                   index,
                   `Background ${index + 1}`
