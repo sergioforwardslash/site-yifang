@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { AdminDashboardLinks } from '../../../../components';
 import './managemenuitem.css'
-
+// import { Sequelize } from 'sequelize'
 
 const ManageMenuItem = () => {
   const [editMode, setEditMode] = useState(false);
@@ -12,13 +12,14 @@ const ManageMenuItem = () => {
     description: '',
     price: '',
   });
+  const [menuItems, setMenuItems] = useState([]);
 
   const handleFileChange = (event) => {
     setSelectedFile(event.target.files[0]);
-  
+
     const data = new FormData();
     data.append('photo', event.target.files[0]);
-  
+
     setFormData({
       ...formData,
       photo: data,
@@ -39,15 +40,24 @@ const ManageMenuItem = () => {
     data.append('description', formData.description);
     data.append('price', formData.price);
     data.append('photo', selectedFile);
-    console.log(formData.name)
-    console.log(formData.description)
-    console.log(formData.price)
-    console.log(formData.photo)
-    axios.post('http://localhost:8000/admin/menuitem', data)
-      .then((response) => console.log(response))
-      .catch((error) => console.error(error));
-  };
   
+    axios.post('http://localhost:8000/admin/menuitem', data)
+      .then((response) => {
+        // Append the new item to the menuItems array
+        setMenuItems([...menuItems, response.data]);
+      })
+      .catch((error) => console.error(error));
+  
+    setEditMode(false);
+    setFormData({
+      name: '',
+      description: '',
+      price: '',
+      photo: null,
+    });
+    setSelectedFile(null);
+  };
+
 
   const handleEditClick = () => {
     setEditMode(true);
@@ -65,6 +75,14 @@ const ManageMenuItem = () => {
     });
     setSelectedFile(null);
   };
+
+  useEffect(() => {
+    axios.get('http://localhost:8000/admin/menuitem')
+      .then((response) => {
+        setMenuItems(response.data);
+      })
+      .catch((error) => console.error(error));
+  }, []);
 
   const handleDeleteClick = () => {
     // Perform delete action here
@@ -92,7 +110,7 @@ const ManageMenuItem = () => {
               </div>
               <div className="menuitem-description">
                 <label htmlFor="description">Description:</label>
-                <input
+                <textarea
                   id="description"
                   name="description"
                   value={formData.description}
@@ -144,13 +162,21 @@ const ManageMenuItem = () => {
               </div>
               <button onClick={handleEditClick}>Edit</button>
               <button onClick={handleDeleteClick}>Delete</button>
-               
             </div>
           )}
         </div>
+        {menuItems.map((item) => (
+          <div key={item.id}>
+            <h3>{item.name}</h3>
+            <p>{item.description}</p>
+            <p>{item.price}</p>
+            <img src={item.photo} alt={item.name} />
+          </div>
+        ))}
       </div>
     </div>
   );
-}
-
-export default ManageMenuItem
+  }
+  
+  export default ManageMenuItem;
+  
