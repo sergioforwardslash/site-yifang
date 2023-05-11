@@ -29,6 +29,12 @@ input[type="file"] {
 }
 
 /* Responsive design for smaller screens */
+@media (max-width: 1440px) {
+  .backgroundButton {
+    width: 400px;
+  }
+}
+
 @media (max-width: 768px) {
   .backgroundButton {
     width: 250px;
