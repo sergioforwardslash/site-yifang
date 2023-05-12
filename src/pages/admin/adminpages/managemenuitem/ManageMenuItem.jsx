@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { AdminDashboardLinks } from '../../../../components';
 import './managemenuitem.css'
+import { menu } from '../../../../constants';
 // import { Sequelize } from 'sequelize'
 
 const ManageMenuItem = () => {
@@ -11,6 +12,7 @@ const ManageMenuItem = () => {
     name: '',
     description: '',
     price: '',
+    
   });
   const [menuItems, setMenuItems] = useState([]);
 
@@ -35,34 +37,49 @@ const ManageMenuItem = () => {
 
   const handleFormSubmit = (event) => {
     event.preventDefault();
-    const data = new FormData();
-    data.append('name', formData.name);
-    data.append('description', formData.description);
-    data.append('price', formData.price);
-    data.append('photo', selectedFile);
+    // const data = new FormData();
+    // data.append('name', formData.name);
+    // data.append('description', formData.description);
+    // data.append('price', formData.price);
+    // data.append('photo', selectedFile);
   
-    axios.post('http://localhost:8000/admin/menuitem', data)
+    axios.post('http://localhost:8000/admin/menuitem', formData)
       .then((response) => {
+        console.log(formData);
         // Append the new item to the menuItems array
-        setMenuItems([...menuItems, response.data]);
+        // setMenuItems([...menuItems, response.data]);
       })
+
+
       .catch((error) => console.error(error));
   
     setEditMode(false);
-    setFormData({
-      name: '',
-      description: '',
-      price: '',
-      photo: null,
-    });
+
+
     setSelectedFile(null);
   };
-
 
   const handleEditClick = () => {
     setEditMode(true);
   };
 
+  // const handleUpload = async (event) => {
+  //   const file = event.target.files[0];
+  //   const formData = new FormData();
+  //   formData.append("menuItemImage", file);
+
+  //   try {
+  //     const response = await axios.post(
+  //       "http://localhost:8000/admin/menuitem",
+  //       formData
+  //     );
+  //     // const menuitem = response.data.path;  FOR USE 
+
+  //     console.log("Photo Uploaded");
+  //   } catch (error) {
+  //     console.log("Error uploading photo:", error);
+  //   }
+  // };
 
   const handleSaveClick = () => {
     handleFormSubmit();
@@ -154,11 +171,12 @@ const ManageMenuItem = () => {
                 <span>{formData.price}</span>
               </div>
               <div>
-                <label>Image:</label>
+                <label htmlFor='file-upload'>Image:</label>
                 <img
                   src={selectedFile ? URL.createObjectURL(selectedFile) : null}
                   alt="Selected file"
                 />
+
               </div>
               <button onClick={handleEditClick}>Edit</button>
               <button onClick={handleDeleteClick}>Delete</button>
