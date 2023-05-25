@@ -1,5 +1,4 @@
-import React from "react";
-
+import React, { useEffect } from "react";
 import {
   Home,
   Catering,
@@ -17,11 +16,18 @@ import {
 import { Footer, Navbar, Order } from "./components";
 import { Routes, Route, useLocation } from "react-router-dom";
 
+import { useDispatch } from "react-redux";
+import { fetchBackground } from "./redux/actions/background";
 import "./App.css";
 
 const App = () => {
+  const dispatch = useDispatch();
   const location = useLocation();
   const hideFooterandNavbar = location.pathname.startsWith("/admin");
+
+  useEffect(() => {
+    dispatch(fetchBackground());
+  }, [dispatch]);
   return (
     <>
       {!hideFooterandNavbar && <Navbar />}

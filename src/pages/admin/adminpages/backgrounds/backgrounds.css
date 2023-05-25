@@ -16,6 +16,10 @@
   cursor: pointer;
 }
 
+.backgroundButton.selected {
+  outline: 3px solid #fff;
+}
+
 .backgroundButton img {
   display: none;
 }
