@@ -3,31 +3,33 @@ import "./backgrounds.css";
 import { images } from "../../../../constants";
 import axios from "axios";
 import { AdminDashboardLinks } from "../../../../components";
-import { BackgroundImageContext } from "../../../../components/backgroundimage/BackgroundImage";
+import { useDispatch, useSelector } from "react-redux";
+import { setBackground } from "../../../../redux/actions/background";
 
 const Backgrounds = () => {
-  let [selectedBackground, setSelectedBackground] = useState(images.background);
+  const [selectedImage, setSelectedImage] = useState(null)
+  const [selectedBackground, setSelectedBackground] = useState(images.background);
   const [customBackgrounds, setCustomBackgrounds] = useState([]);
-  const { setBackgroundImage } = useContext(BackgroundImageContext)
-
-  const handleBackgroundSelection = (bg) => {
-    setBackgroundImage(bg);
-  }
+  const dispatch = useDispatch();
+  const confirmedBackground = useSelector(state => state.background)
 
   const handleBackgroundChange = (background) => {
     setSelectedBackground(background);
+  };
 
-    axios
-      .post(
-        "http://localhost:8000/admin/backgrounds",
-        { path: selectedBackground }
-      )
-      .then(() => {
-        console.log("Photo toggled");
-      })
-      .catch((error) => {
-        console.log("Error toggling photo:", error);
-      });
+  const handleConfirm = () => {
+    setSelectedBackground(selectedImage)
+    dispatch(setBackground(selectedImage))
+    // axios
+    //   .post("http://localhost:8000/admin/backgrounds/select", {
+    //     path: selectedBackground,
+    //   })
+    //   .then(() => {
+    //     console.log("Background selected successfully");
+    //   })
+    //   .catch((error) => {
+    //     console.log("Error selecting photo:", error);
+    //   });
   };
 
   const handleUpload = async (event) => {
@@ -51,7 +53,7 @@ const Backgrounds = () => {
   useEffect(() => {
     document.body.style.backgroundImage = `url(${selectedBackground})`;
     document.body.style.backgroundSize = "100%";
-  }, [selectedBackground])
+  }, [selectedBackground]);
 
   useEffect(() => {
     const fetchBackgrounds = async () => {
@@ -59,7 +61,8 @@ const Backgrounds = () => {
         const response = await axios.get(
           "http://localhost:8000/admin/backgrounds"
         );
-        setCustomBackgrounds(response.data);
+        setCustomBackgrounds(response.data.paths);
+        setSelectedBackground(response.data.selectedBackground)
       } catch (error) {
         console.log("Error fetching backgrounds:", error);
       }
@@ -68,13 +71,21 @@ const Backgrounds = () => {
     fetchBackgrounds();
   }, []);
 
+  useEffect(() => {
+    setSelectedBackground(
+      customBackgrounds.length > 0
+        ? customBackgrounds[customBackgrounds.length - 1]
+        : images.background
+    );
+  }, [customBackgrounds]);
+
   const renderBackgroundButton = (background, index, altText) => (
     <button
       key={`background-${index}`}
-      className="backgroundButton"
+      className={`backgroundButton ${background === selectedImage ? 'selected' : ''}`}
       style={{ backgroundImage: `url(http://localhost:8000/${background})` }}
       onClick={() => handleBackgroundChange(background)}
-    />    
+    />
   );
 
   const renderPredefinedBackgroundButton = (background, index) => (
@@ -84,7 +95,7 @@ const Backgrounds = () => {
       style={{ backgroundImage: `url(${background})` }}
       onClick={() => handleBackgroundChange(background)}
     />
-  )
+  );
 
   const predefinedBackgrounds = [
     images.background,
@@ -124,6 +135,8 @@ const Backgrounds = () => {
               <label htmlFor="file-upload">Upload a custom background:</label>
               <input id="file-upload" type="file" onChange={handleUpload} />
             </div>
+
+            <button onClick={handleConfirm}>Confirm</button>
           </div>
         </div>
       </div>

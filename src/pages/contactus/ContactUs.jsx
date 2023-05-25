@@ -2,9 +2,11 @@ import React, { useState, useRef } from "react";
 import axios from "axios";
 import "./contactus.css";
 
-import { images } from "../../constants";
+import { useSelector } from "react-redux";
+import { useEffect } from "react";
 
 const ContactUs = () => {
+  const background = useSelector((state) => state.background);
   const form = useRef();
   const [formData, setFormData] = useState({
     name: "",
@@ -35,10 +37,15 @@ const ContactUs = () => {
     }
   };
 
+  useEffect(() => {
+    if (background) {
+      document.body.style.backgroundImage = `url(http://localhost:8000/${background})`;
+      document.body.style.backgroundSize = "100%";
+    }
+  }, [background]);
+
   return (
-    <div
-      className="contactus section-padding"
-    >
+    <div className="contactus section-padding">
       <div className="contactus-container">
         <div className="contactus-center">
           <h1>Send Us A Message!</h1>
