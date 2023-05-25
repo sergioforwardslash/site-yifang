@@ -1,12 +1,18 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import "./backgrounds.css";
 import { images } from "../../../../constants";
 import axios from "axios";
 import { AdminDashboardLinks } from "../../../../components";
+import { BackgroundImageContext } from "../../../../components/backgroundimage/BackgroundImage";
 
 const Backgrounds = () => {
   let [selectedBackground, setSelectedBackground] = useState(images.background);
   const [customBackgrounds, setCustomBackgrounds] = useState([]);
+  const { setBackgroundImage } = useContext(BackgroundImageContext)
+
+  const handleBackgroundSelection = (bg) => {
+    setBackgroundImage(bg);
+  }
 
   const handleBackgroundChange = (background) => {
     setSelectedBackground(background);

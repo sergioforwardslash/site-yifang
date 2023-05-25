@@ -6,7 +6,6 @@ import { images } from "../../constants";
 
 const ContactUs = () => {
   const form = useRef();
-
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -39,10 +38,6 @@ const ContactUs = () => {
   return (
     <div
       className="contactus section-padding"
-      style={{
-        backgroundImage: `url(${images.background})`,
-        backgroundSize: "100%",
-      }}
     >
       <div className="contactus-container">
         <div className="contactus-center">
