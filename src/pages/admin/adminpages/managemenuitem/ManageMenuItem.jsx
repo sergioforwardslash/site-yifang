@@ -11,6 +11,7 @@ const ManageMenuItem = () => {
     name: '',
     description: '',
     price: '',
+    photo: null,
   });
 
   const handleFileChange = (event) => {
@@ -32,20 +33,21 @@ const ManageMenuItem = () => {
     });
   };
 
-  const handleFormSubmit = (event) => {
+  const handleFormSubmit = async (event) => {
     event.preventDefault();
     const data = new FormData();
     data.append('name', formData.name);
     data.append('description', formData.description);
     data.append('price', formData.price);
     data.append('photo', selectedFile);
-    console.log(formData.name)
-    console.log(formData.description)
-    console.log(formData.price)
-    console.log(formData.photo)
-    axios.post('http://localhost:8000/admin/menuitem', data)
+
+    try {
+      const response = await axios.post('http://localhost:8000/admin/menuitem', data)
       .then((response) => console.log(response))
       .catch((error) => console.error(error));
+    } catch (error) {
+      console.error(error);
+    }
   };
   
 
