@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import "./backgrounds.css";
 import { images } from "../../../../constants";
 import axios from "axios";

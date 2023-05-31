@@ -27,7 +27,7 @@ const ManageMenuItem = () => {
     });
   };
 
-  const handleFormSubmit = (event) => {
+  const handleFormSubmit = async (event) => {
     event.preventDefault();
     const data = new FormData();
     data.append('name', formData.name);
