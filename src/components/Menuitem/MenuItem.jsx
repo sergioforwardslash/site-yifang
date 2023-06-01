@@ -4,7 +4,7 @@ import "./menuitem.css";
 const MenuItem = ({ title, price, img }) => (
   <div className="menuitem">
     <div className="menuitem-image">
-      <img src={img} alt='menu-item'/>
+      <img src={`http://localhost:8000/public/${img}`} alt='menu-item'/>
     </div>
     <div className="menuitem-head">
       <div className="menuitem-name">
@@ -12,7 +12,7 @@ const MenuItem = ({ title, price, img }) => (
       </div>
       <div className="menuitem-dash" />
       <div className="menuitem-price">
-        <p>{price}</p>
+        <p>${price}</p>
       </div>
     </div>
   </div>

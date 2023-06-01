@@ -63,6 +63,7 @@ const Backgrounds = () => {
         );
         setCustomBackgrounds(response.data.paths);
         setSelectedBackground(response.data.selectedBackground)
+        console.log("Backgrounds fetched successfully");
       } catch (error) {
         console.log("Error fetching backgrounds:", error);
       }
@@ -83,7 +84,7 @@ const Backgrounds = () => {
     <button
       key={`background-${index}`}
       className={`backgroundButton ${background === selectedImage ? 'selected' : ''}`}
-      style={{ backgroundImage: `url(http://localhost:8000/${background})` }}
+      style={{ backgroundImage: `url(http://localhost:8000/public/${background})` }}
       onClick={() => handleBackgroundChange(background)}
     />
   );
