@@ -1,15 +1,15 @@
-import React, { useState } from 'react';
-import axios from 'axios';
-import { AdminDashboardLinks } from '../../../../components';
-import './managemenuitem.css';
+import React, { useState, useEffect } from "react";
+import axios from "axios";
+import { AdminDashboardLinks } from "../../../../components";
+import "./managemenuitem.css";
 
 const ManageMenuItem = () => {
   const [editMode, setEditMode] = useState(false);
   const [selectedFile, setSelectedFile] = useState(null);
   const [formData, setFormData] = useState({
-    name: '',
-    description: '',
-    price: '',
+    name: "",
+    description: "",
+    price: "",
   });
 
   const handleFileChange = (event) => {
@@ -34,35 +34,59 @@ const ManageMenuItem = () => {
     data.append('description', formData.description);
     data.append('price', formData.price);
     data.append('photo', selectedFile);
-
-    axios
-      .post('http://localhost:8000/admin/menuitem', data)
-      .then((response) => {
-        console.log(response);
-        setFormData({
-          name: '',
-          description: '',
-          price: '',
-        });
-        setSelectedFile(null);
-        setEditMode(false);
-
-        // Fetch the newly created menu item from your API
-        axios
-          .get('http://localhost:8000/admin/menuitem')
-          .then((response) => {
-            const newItem = response.data; // Assuming the API response contains the new menu item object
-            // Update the frontend state with the new menu item
-            setFormData(newItem);
-          })
-          .catch((error) => {
-            console.error(error);
-          });
-      })
-      .catch((error) => {
-        console.error(error);
+  
+    try {
+      const response = await axios.post('http://localhost:8000/admin/menuitem', data);
+      const newItem = response.data; // Assuming the server responds with the newly created item
+      console.log(newItem); // Log the new item to the console for verification
+  
+      // Update the component state with the new item
+      setFormData({
+        name: newItem.name,
+        description: newItem.description,
+        price: newItem.price,
       });
+  
+      setSelectedFile(null); // Reset the selectedFile state
+      setEditMode(true); // Enable edit mode for the new item
+  
+    } catch (error) {
+      console.error(error);
+    }
   };
+
+  const handleDeleteClick = async () => {
+    try {
+      await axios.delete('http://localhost:8000/admin/menuitem');
+      // Assuming successful deletion, you can perform any necessary cleanup or navigate to a different page
+      // For example, you can navigate back to the admin dashboard after deletion
+      window.location.href = '/admin';
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await axios.get('http://localhost:8000/admin/menuitem');
+        const data = response.data;
+        
+        // Update component state with fetched data
+        setFormData({
+          name: data.name,
+          description: data.description,
+          price: data.price,
+        });
+        
+        setSelectedFile(data.photo); // Assuming the photo path is received as a string
+        
+      } catch (error) {
+        console.log(error);
+      }
+    };
+    fetchData();
+  }, []);
 
   const handleEditClick = () => {
     setEditMode(true);
@@ -72,10 +96,7 @@ const ManageMenuItem = () => {
     handleFormSubmit();
   };
 
-  const handleDeleteClick = () => {
-    // Perform delete action here
-  };
-
+  
   return (
     <div className="admin-dashboard">
       <h1>
@@ -159,8 +180,9 @@ const ManageMenuItem = () => {
           )}
         </div>
       </div>
+   
     </div>
+    
   );
 };
-
 export default ManageMenuItem;
