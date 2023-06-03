@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import "./login.css";
 import axios from "axios";
 
@@ -12,6 +13,8 @@ const Login = () => {
     password: "",
   });
 
+  const history = useNavigate();
+
   const handleChange = (event) => {
     const { name, value } = event.target;
     setFormData((prevState) => ({
@@ -24,11 +27,13 @@ const Login = () => {
     event.preventDefault();
     setSubmitting(true);
     axios
-      .post("https://yifangglendale.com/api/user/login", FormData)
+      .post("http://localhost:8000/user/login", FormData)
       .then((response) => {
+        localStorage.setItem("token", response.data.token);
         setSuccess(true)
         setError(null)
         console.log("Loggedin");
+        history("/");
       })
       .catch((error) => {
         setSuccess(false)

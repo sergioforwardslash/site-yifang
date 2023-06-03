@@ -25,7 +25,7 @@ const Register = () => {
     event.preventDefault()
     setSubmitting(true);
     axios
-      .post("https://yifangglendale.com/api/user/register", formData)
+      .post("http://localhost:8000/user/register", formData)
       .then((response) => {
         setSuccess(true);
         setError(null);
