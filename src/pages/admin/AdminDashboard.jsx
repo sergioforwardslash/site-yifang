@@ -9,7 +9,10 @@ function App() {
       </h1>
       <div className="admin-container">
         <AdminDashboardLinks />
-        <div className="admin-viewbox">hi</div>
+        <div className="admin-viewbox">
+          <h2>Welcome to the Admin Dashboard</h2>
+          <p>Here you can manage your admin tasks.</p>
+        </div>
       </div>
     </div>
   );

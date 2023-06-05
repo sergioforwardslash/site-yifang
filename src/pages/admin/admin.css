@@ -20,14 +20,14 @@
 
 .admin-container {
   display: flex;
-  flex-direction: row;
-  align-items: flex-start;
+  flex-direction: column;
+  align-items: center;
   justify-content: flex-start;
   width: 100%;
-
   padding: 2rem 0;
   border: 1px solid white;
 }
+
 
 .admin-links {
   padding: .5rem 2rem;
@@ -44,6 +44,30 @@
 .admin-viewbox {
   border: 1px solid white;
   width: 100%;
+  max-width: 400px; 
+  padding: 2rem;
+  margin-top: 1rem;
+}
 
-  padding: .5rem 2rem;
+
+@media (max-width: 1440px) {
+  .admin-viewbox{
+    width: 400px;
+  }
+}
+
+/* just added 6/4/23 *//* ...existing CSS rules... */
+
+/* Adjusted styles for small screens */
+@media (max-width: 768px) {
+  .admin-container {
+    align-items: center;
+  }
+
+  .admin-viewbox {
+    max-width: 400px;
+    padding: 2rem;
+    margin-top: 1rem;
+    text-align: center;
+  }
 }
