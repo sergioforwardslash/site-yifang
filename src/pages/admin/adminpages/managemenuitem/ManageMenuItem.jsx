@@ -9,7 +9,7 @@ const ManageMenuItem = () => {
   const [editMode, setEditMode] = useState(false);
   const [selectedFile, setSelectedFile] = useState(null);
   const [formData, setFormData] = useState({
-    name: "" ,
+    name: "",
     description: "",
     price: "",
     photo: null,
@@ -194,8 +194,9 @@ const ManageMenuItem = () => {
           </div>
         </div>
       </div>
+   
     </div>
+    
   );
 };
-
 export default ManageMenuItem;

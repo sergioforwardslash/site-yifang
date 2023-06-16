@@ -90,4 +90,14 @@
     border: 1px solid #ccc;
     border-radius: 5px;
   }
+  @media (max-width: 768px) { 
+    .admin-viewbox {
+      width: 250px;
+      height: 125px;
+    }
+  
+    .imagePreview {
+      width: 250px;
+    }
+  }
   

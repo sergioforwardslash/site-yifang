@@ -1,9 +1,30 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { MenuItem } from "../../components";
 import { images, menu } from "../../constants";
 import "./order.css";
 
+import axios from "axios";
+
+
 const Order = () => {
+
+  const [menuItem, setMenuItem] = useState([]);
+
+  const fetchMenuItem = async () => {
+    try {
+      const response = await axios.get("http://localhost:8000/admin/menuitem");
+      const updatedMenuItem = response.data;
+      setMenuItem(updatedMenuItem); // Update the menuItem state with fetched data
+      console.log(updatedMenuItem);
+    } catch (error) {
+      console.log("Error fetching menu item:", error);
+    }
+  };
+  useEffect(() => {
+    fetchMenuItem();
+  }, []);
+  
+
   return (
     <div
       className="order section-padding"
@@ -34,13 +55,13 @@ const Order = () => {
         <div className="order-menu-tea">
           <p className="order-menu-heading">Tea</p>
           <div className="order-menu-items">
-            {menu.tea.map((tea, index) => (
-              <MenuItem
-                key={tea.title + index}
-                title={tea.title}
-                price={tea.price}
-                img={tea.image}
-              />
+            {menuItem.map((item) => (
+                <MenuItem
+                  key={item.id}
+                  title={item.name}
+                  price={item.price}
+                  img={item.photo}
+                />
             ))}
           </div>
         </div>
